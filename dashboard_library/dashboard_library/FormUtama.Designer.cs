@@ -63,7 +63,7 @@
             // 
             // btnTambah
             // 
-            this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTambah.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTambah.Location = new System.Drawing.Point(1099, 12);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(266, 35);
@@ -112,6 +112,7 @@
             // 
             // btnHapus
             // 
+            this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHapus.Location = new System.Drawing.Point(414, 133);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(75, 36);
@@ -121,6 +122,7 @@
             // 
             // btnUbah
             // 
+            this.btnUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUbah.Location = new System.Drawing.Point(48, 133);
             this.btnUbah.Name = "btnUbah";
             this.btnUbah.Size = new System.Drawing.Size(75, 36);
@@ -141,6 +143,8 @@
             // 
             // rtbSinopsisPreview
             // 
+            this.rtbSinopsisPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbSinopsisPreview.Location = new System.Drawing.Point(12, 15);
             this.rtbSinopsisPreview.Name = "rtbSinopsisPreview";
             this.rtbSinopsisPreview.ReadOnly = true;
@@ -150,6 +154,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblSutradaraPreview);
             this.groupBox1.Controls.Add(this.pbPosterPreview);
             this.groupBox1.Location = new System.Drawing.Point(878, 16);
@@ -181,6 +187,9 @@
             // dgvFilm
             // 
             this.dgvFilm.AllowUserToAddRows = false;
+            this.dgvFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFilm.Location = new System.Drawing.Point(12, 6);
             this.dgvFilm.MultiSelect = false;
