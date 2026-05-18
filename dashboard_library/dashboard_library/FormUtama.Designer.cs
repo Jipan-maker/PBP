@@ -38,7 +38,7 @@
             this.btnUbah = new System.Windows.Forms.Button();
             this.lblTotalKoleksi = new System.Windows.Forms.Label();
             this.rtbSinopsisPreview = new System.Windows.Forms.RichTextBox();
-            groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblSutradaraPreview = new System.Windows.Forms.Label();
             this.pbPosterPreview = new System.Windows.Forms.PictureBox();
             this.dgvFilm = new System.Windows.Forms.DataGridView();
@@ -114,7 +114,7 @@
             // 
             this.btnHapus.Location = new System.Drawing.Point(414, 133);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(75, 23);
+            this.btnHapus.Size = new System.Drawing.Size(75, 36);
             this.btnHapus.TabIndex = 3;
             this.btnHapus.Text = "Hapus Film";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             // 
             this.btnUbah.Location = new System.Drawing.Point(48, 133);
             this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(75, 23);
+            this.btnUbah.Size = new System.Drawing.Size(75, 36);
             this.btnUbah.TabIndex = 2;
             this.btnUbah.Text = "Ubah Detail";
             this.btnUbah.UseVisualStyleBackColor = true;
