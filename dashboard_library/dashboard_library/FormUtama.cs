@@ -14,24 +14,24 @@ namespace dashboard_library
     public partial class FormUtama : Form
     {
         private BindingList<Film> databaseFilm = new BindingList<Film>();
-
         private string namaFileDatabase = "DataKoleksiFilm.txt";
 
         public FormUtama()
         {
             InitializeComponent();
 
-           
-
+            // Setup DataGridView
             dgvFilm.DataSource = databaseFilm;
             dgvFilm.RowTemplate.Height = 80;
 
+            // Sambungkan event klik dan sensor perubahan teks
             btnTambah.Click += new EventHandler(btnTambah_Click);
             btnUbah.Click += new EventHandler(btnUbah_Click);
             btnHapus.Click += new EventHandler(btnHapus_Click);
             dgvFilm.SelectionChanged += new EventHandler(dgvFilm_SelectionChanged);
             txtCari.TextChanged += new EventHandler(txtCari_TextChanged);
 
+            // Isi ComboBox Filter
             cbGenreFilter.Items.Add("Semua Genre");
             cbGenreFilter.Items.Add("Action");
             cbGenreFilter.Items.Add("Drama");
@@ -46,17 +46,27 @@ namespace dashboard_library
             // MEMANGGIL FUNGSI MUAT DATA SAAT APLIKASI BARU DIBUKA
             // ====================================================
             MuatDataDariFile();
+
+            // ====================================================
+            // FIX ERROR: Perintah merapikan gambar dipindah ke saat Load
+            // ====================================================
+            this.Load += new EventHandler(FormUtama_Load);
+        }
+
+        // Fungsi Load: Berjalan otomatis saat aplikasi sudah berwujud di layar
+        private void FormUtama_Load(object sender, EventArgs e)
+        {
+            AturLayoutPosterTabel();
         }
 
         // =======================================================
-        // FITUR BARU: MENYIMPAN DATA KE FILE TXT
+        // FITUR: MENYIMPAN DATA KE FILE TXT
         // =======================================================
         private void SimpanDataKeFile()
         {
             List<string> barisData = new List<string>();
             foreach (Film f in databaseFilm)
             {
-                // Ubah gambar jadi teks panjang (Base64) jika ada gambarnya
                 string teksPoster = "";
                 if (f.Poster != null)
                 {
@@ -67,22 +77,19 @@ namespace dashboard_library
                 string baris = $"{f.ID}|||{f.Judul}|||{f.Genre}|||{f.Tahun}|||{f.Rating}|||{f.Sutradara}|||{f.Sinopsis}|||{teksPoster}";
                 barisData.Add(baris);
             }
-            // Tulis dan simpan ke file lokal
             File.WriteAllLines(namaFileDatabase, barisData);
         }
 
         // =======================================================
-        // FITUR BARU: MEMBACA DATA DARI FILE TXT
+        // FITUR: MEMBACA DATA DARI FILE TXT
         // =======================================================
         private void MuatDataDariFile()
         {
-            // Cek apakah filenya sudah pernah dibuat sebelumnya
             if (File.Exists(namaFileDatabase))
             {
                 string[] barisData = File.ReadAllLines(namaFileDatabase);
                 foreach (string baris in barisData)
                 {
-                    // Pecah kembali datanya berdasarkan tanda "|||"
                     string[] kolom = baris.Split(new string[] { "|||" }, StringSplitOptions.None);
 
                     if (kolom.Length == 8)
@@ -96,7 +103,6 @@ namespace dashboard_library
                         f.Sutradara = kolom[5];
                         f.Sinopsis = kolom[6];
 
-                        // Kembalikan teks panjang menjadi gambar
                         if (!string.IsNullOrEmpty(kolom[7]))
                         {
                             f.Poster = UbahTeksKeGambar(kolom[7]);
@@ -130,7 +136,7 @@ namespace dashboard_library
         }
 
         // =======================================================
-        // FUNGSI LAINNYA (DENGAN TAMBAHAN AUTO-SAVE)
+        // FUNGSI UTAMA (CRUD & PENCARIAN)
         // =======================================================
         private void btnTambah_Click(object sender, EventArgs e)
         {
@@ -139,8 +145,7 @@ namespace dashboard_library
             {
                 databaseFilm.Add(formInput.FilmBaru);
                 lblTotalKoleksi.Text = $"Total Koleksi : {databaseFilm.Count} Film";
-
-                SimpanDataKeFile(); // AUTO-SAVE
+                SimpanDataKeFile();
             }
         }
 
@@ -156,10 +161,13 @@ namespace dashboard_library
                     int index = databaseFilm.IndexOf(filmTerpilih);
                     databaseFilm[index] = formEdit.FilmBaru;
                     dgvFilm.Refresh();
-
-                    SimpanDataKeFile(); // AUTO-SAVE
+                    SimpanDataKeFile();
                     MessageBox.Show("Detail film berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Pilih film yang ingin diubah terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -174,10 +182,13 @@ namespace dashboard_library
                 {
                     databaseFilm.Remove(filmTerpilih);
                     lblTotalKoleksi.Text = $"Total Koleksi : {databaseFilm.Count} Film";
-
-                    SimpanDataKeFile(); // AUTO-SAVE
+                    SimpanDataKeFile();
                     MessageBox.Show("Film berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Pilih film yang ingin dihapus terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -193,6 +204,7 @@ namespace dashboard_library
                     if (filmTerpilih.Poster != null)
                     {
                         pbPosterPreview.Image = filmTerpilih.Poster;
+                        // Pastikan di Designer SizeMode-nya sudah Zoom
                         pbPosterPreview.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                     else pbPosterPreview.Image = null;
@@ -209,7 +221,8 @@ namespace dashboard_library
         private void txtCari_TextChanged(object sender, EventArgs e)
         {
             string kataKunci = txtCari.Text.ToLower().Trim();
-            if (string.IsNullOrEmpty(kataKunci) || kataKunci == "cari judul film...") dgvFilm.DataSource = databaseFilm;
+            if (string.IsNullOrEmpty(kataKunci) || kataKunci == "cari judul film...")
+                dgvFilm.DataSource = databaseFilm;
             else
             {
                 var hasilPencarian = databaseFilm.Where(f => f.Judul.ToLower().Contains(kataKunci)).ToList();
@@ -221,7 +234,8 @@ namespace dashboard_library
         private void CbGenreFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             string genrePilihan = cbGenreFilter.Text;
-            if (genrePilihan == "Semua Genre") dgvFilm.DataSource = databaseFilm;
+            if (genrePilihan == "Semua Genre")
+                dgvFilm.DataSource = databaseFilm;
             else
             {
                 var dataTersaring = new BindingList<Film>(databaseFilm.Where(f => f.Genre == genrePilihan).ToList());
@@ -230,25 +244,42 @@ namespace dashboard_library
             AturLayoutPosterTabel();
         }
 
+        // =======================================================
+        // FUNGSI ANTI-ERROR UNTUK MERAPIKAN GAMBAR POSTER
+        // =======================================================
         private void AturLayoutPosterTabel()
         {
-            if (dgvFilm.Columns["Poster"] != null)
+            try
             {
-                DataGridViewImageColumn colGambar = (DataGridViewImageColumn)dgvFilm.Columns["Poster"];
-                colGambar.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                colGambar.Width = 100;
+                // Cek apakah kolomnya ada dan siap
+                if (dgvFilm.Columns["Poster"] != null)
+                {
+                    DataGridViewImageColumn colGambar = dgvFilm.Columns["Poster"] as DataGridViewImageColumn;
+                    if (colGambar != null)
+                    {
+                        colGambar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                        colGambar.Width = 100;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Abaikan jika tabel masih loading agar tidak crash
             }
         }
 
+        // =======================================================
+        // EVENT KOSONG BAWAAN DESIGNER (JANGAN DIHAPUS)
+        // =======================================================
         private void groupBox1_Enter(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
-
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void pnlHeader_Paint(object sender, PaintEventArgs e) { }
+        private void pbPosterPreview_Click(object sender, EventArgs e) { }
     }
 
+    // =========================================================
+    // CLASS FILM
+    // =========================================================
     public class Film
     {
         public string ID { get; set; }
