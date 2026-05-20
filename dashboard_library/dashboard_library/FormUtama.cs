@@ -20,9 +20,76 @@ namespace dashboard_library
         {
             InitializeComponent();
 
+     // ===================================================================
+    // TEMA WARNA MODERN: PASTEL & NAVY BLUE (HEX COLOR TRANSLATOR)
+    // ===================================================================
+
+    // 1. Latar Belakang Form Utama & Panel Tengah (pnlMain) - Biru Sangat Pucat
+    this.BackColor = ColorTranslator.FromHtml("#F0F4F8");
+            if (this.pnlMain != null)
+            {
+                this.pnlMain.BackColor = ColorTranslator.FromHtml("#F0F4F8");
+            }
+            if (this.groupBox1 != null)
+            {
+                this.groupBox1.BackColor = ColorTranslator.FromHtml("#F0F4F8");
+            }
+
+            // 2. Latar Belakang Panel Header & Footer - Biru Pastel
+            if (this.pnlHeader != null)
+            {
+                this.pnlHeader.BackColor = ColorTranslator.FromHtml("#D9E2EC");
+            }
+            if (this.pnlFooter != null)
+            {
+                this.pnlFooter.BackColor = ColorTranslator.FromHtml("#D9E2EC");
+            }
+
+            // 3. Teks Label & Judul Aplikasi - Biru Dongker Gelap
+            // Silakan sesuaikan nama variabel label yang ada di form kelompok Anda (contoh: lblJudul, lblTotalKoleksi)
+            if (this.lblTotalKoleksi != null) this.lblTotalKoleksi.ForeColor = ColorTranslator.FromHtml("#102A43");
+            if (this.lblSutradaraPreview != null) this.lblSutradaraPreview.ForeColor = ColorTranslator.FromHtml("#102A43");
+            if (this.groupBox1 != null) this.groupBox1.ForeColor = ColorTranslator.FromHtml("#102A43"); // Mewarnai teks "Preview Film"
+
+            // 4. Tombol-tombol Utama (Tambah, Ubah, Hapus) - Biru Samudra & Teks Putih
+            Color warnaTombol = ColorTranslator.FromHtml("#1864AB");
+
+            btnTambah.BackColor = warnaTombol;
+            btnTambah.ForeColor = Color.White;
+            btnTambah.FlatStyle = FlatStyle.Flat; // Membuat tombol terlihat modern tanpa border jadul Windows
+            btnTambah.FlatAppearance.BorderSize = 0;
+
+            btnUbah.BackColor = warnaTombol;
+            btnUbah.ForeColor = Color.White;
+            btnUbah.FlatStyle = FlatStyle.Flat;
+            btnUbah.FlatAppearance.BorderSize = 0;
+
+            btnHapus.BackColor = warnaTombol;
+            btnHapus.ForeColor = Color.White;
+            btnHapus.FlatStyle = FlatStyle.Flat;
+            btnHapus.FlatAppearance.BorderSize = 0;
+
+            // 5. Kustomisasi Detail Estetika Tabel (DataGridView)
+            dgvFilm.BackgroundColor = ColorTranslator.FromHtml("#D9E2EC"); // Latar kosong tabel
+            dgvFilm.GridColor = ColorTranslator.FromHtml("#BCCCDC");       // Warna garis pembatas sel
+
+            // Default cell style (Warna baris data standard)
+            dgvFilm.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FFFFFF"); // Putih Bersih
+            dgvFilm.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#102A43"); // Biru Dongker Gelap
+
+            // Selection style (Warna saat baris diklik/sorot)
+            dgvFilm.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#627D98"); // Biru Keabu-abuan
+            dgvFilm.DefaultCellStyle.SelectionForeColor = Color.White; // Teks saat disorot tetap putih agar kontras
+
+            // Header Tabel Atas (ID, Judul, dll) agar ikut senada
+            dgvFilm.EnableHeadersVisualStyles = false;
+            dgvFilm.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#D9E2EC");
+            dgvFilm.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#102A43");
+
             // Setup DataGridView
             dgvFilm.DataSource = databaseFilm;
             dgvFilm.RowTemplate.Height = 80;
+            
 
             // Sambungkan event klik dan sensor perubahan teks
             btnTambah.Click += new EventHandler(btnTambah_Click);
@@ -39,6 +106,7 @@ namespace dashboard_library
             cbGenreFilter.Items.Add("Sci-fi");
             cbGenreFilter.Items.Add("Horror");
             cbGenreFilter.Items.Add("Comedy");
+            cbGenreFilter.Items.Add("Fantasy");
             cbGenreFilter.SelectedIndex = 0;
             cbGenreFilter.SelectedIndexChanged += new EventHandler(CbGenreFilter_SelectedIndexChanged);
 
@@ -275,6 +343,11 @@ namespace dashboard_library
         private void label1_Click(object sender, EventArgs e) { }
         private void pnlHeader_Paint(object sender, PaintEventArgs e) { }
         private void pbPosterPreview_Click(object sender, EventArgs e) { }
+
+        private void pbPosterPreview_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
     // =========================================================

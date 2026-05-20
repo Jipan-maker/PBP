@@ -59,16 +59,16 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1260, 47);
+            this.pnlHeader.Size = new System.Drawing.Size(1418, 59);
             this.pnlHeader.TabIndex = 0;
             // 
             // btnTambah
             // 
             this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTambah.Location = new System.Drawing.Point(977, 10);
+            this.btnTambah.Location = new System.Drawing.Point(1099, 12);
             this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(236, 28);
+            this.btnTambah.Size = new System.Drawing.Size(266, 35);
             this.btnTambah.TabIndex = 2;
             this.btnTambah.Text = "+ Tambah Film Baru";
             this.btnTambah.UseVisualStyleBackColor = true;
@@ -77,18 +77,18 @@
             // 
             this.cbGenreFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGenreFilter.FormattingEnabled = true;
-            this.cbGenreFilter.Location = new System.Drawing.Point(556, 13);
+            this.cbGenreFilter.Location = new System.Drawing.Point(626, 16);
             this.cbGenreFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbGenreFilter.Name = "cbGenreFilter";
-            this.cbGenreFilter.Size = new System.Drawing.Size(339, 24);
+            this.cbGenreFilter.Size = new System.Drawing.Size(381, 28);
             this.cbGenreFilter.TabIndex = 1;
             // 
             // txtCari
             // 
-            this.txtCari.Location = new System.Drawing.Point(31, 14);
+            this.txtCari.Location = new System.Drawing.Point(35, 18);
             this.txtCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(377, 22);
+            this.txtCari.Size = new System.Drawing.Size(424, 26);
             this.txtCari.TabIndex = 0;
             // 
             // pnlMain
@@ -97,10 +97,10 @@
             this.pnlMain.Controls.Add(this.groupBox1);
             this.pnlMain.Controls.Add(this.dgvFilm);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 47);
+            this.pnlMain.Location = new System.Drawing.Point(0, 59);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1260, 628);
+            this.pnlMain.Size = new System.Drawing.Size(1418, 785);
             this.pnlMain.TabIndex = 1;
             // 
             // pnlFooter
@@ -110,28 +110,30 @@
             this.pnlFooter.Controls.Add(this.lblTotalKoleksi);
             this.pnlFooter.Controls.Add(this.rtbSinopsisPreview);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 483);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 604);
             this.pnlFooter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1260, 145);
+            this.pnlFooter.Size = new System.Drawing.Size(1418, 181);
             this.pnlFooter.TabIndex = 2;
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(368, 106);
+            this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHapus.Location = new System.Drawing.Point(414, 132);
             this.btnHapus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(67, 28);
+            this.btnHapus.Size = new System.Drawing.Size(75, 35);
             this.btnHapus.TabIndex = 3;
             this.btnHapus.Text = "Hapus Film";
             this.btnHapus.UseVisualStyleBackColor = true;
             // 
             // btnUbah
             // 
-            this.btnUbah.Location = new System.Drawing.Point(43, 106);
+            this.btnUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUbah.Location = new System.Drawing.Point(48, 132);
             this.btnUbah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(67, 28);
+            this.btnUbah.Size = new System.Drawing.Size(75, 35);
             this.btnUbah.TabIndex = 2;
             this.btnUbah.Text = "Ubah Detail";
             this.btnUbah.UseVisualStyleBackColor = true;
@@ -140,32 +142,37 @@
             // 
             this.lblTotalKoleksi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalKoleksi.AutoSize = true;
-            this.lblTotalKoleksi.Location = new System.Drawing.Point(1075, 106);
+            this.lblTotalKoleksi.Location = new System.Drawing.Point(1209, 132);
             this.lblTotalKoleksi.Name = "lblTotalKoleksi";
-            this.lblTotalKoleksi.Size = new System.Drawing.Size(138, 17);
+            this.lblTotalKoleksi.Size = new System.Drawing.Size(152, 20);
             this.lblTotalKoleksi.TabIndex = 1;
             this.lblTotalKoleksi.Text = "Total Koleksi : 0 Film";
             this.lblTotalKoleksi.Click += new System.EventHandler(this.label1_Click);
             // 
             // rtbSinopsisPreview
             // 
-            this.rtbSinopsisPreview.Location = new System.Drawing.Point(11, 12);
+            this.rtbSinopsisPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbSinopsisPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbSinopsisPreview.Location = new System.Drawing.Point(12, 15);
             this.rtbSinopsisPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbSinopsisPreview.Name = "rtbSinopsisPreview";
             this.rtbSinopsisPreview.ReadOnly = true;
-            this.rtbSinopsisPreview.Size = new System.Drawing.Size(1240, 76);
+            this.rtbSinopsisPreview.Size = new System.Drawing.Size(1394, 94);
             this.rtbSinopsisPreview.TabIndex = 0;
             this.rtbSinopsisPreview.Text = "Detail sinopsis akan muncul disini...";
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblSutradaraPreview);
             this.groupBox1.Controls.Add(this.pbPosterPreview);
-            this.groupBox1.Location = new System.Drawing.Point(780, 13);
+            this.groupBox1.Location = new System.Drawing.Point(878, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(442, 466);
+            this.groupBox1.Size = new System.Drawing.Size(497, 582);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Preview Film";
@@ -174,40 +181,45 @@
             // lblSutradaraPreview
             // 
             this.lblSutradaraPreview.AutoSize = true;
-            this.lblSutradaraPreview.Location = new System.Drawing.Point(28, 428);
+            this.lblSutradaraPreview.Location = new System.Drawing.Point(32, 535);
             this.lblSutradaraPreview.Name = "lblSutradaraPreview";
-            this.lblSutradaraPreview.Size = new System.Drawing.Size(88, 17);
+            this.lblSutradaraPreview.Size = new System.Drawing.Size(97, 20);
             this.lblSutradaraPreview.TabIndex = 1;
             this.lblSutradaraPreview.Text = "Sutradara : -";
             // 
             // pbPosterPreview
             // 
-            this.pbPosterPreview.Location = new System.Drawing.Point(21, 28);
+            this.pbPosterPreview.Location = new System.Drawing.Point(24, 35);
             this.pbPosterPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPosterPreview.Name = "pbPosterPreview";
-            this.pbPosterPreview.Size = new System.Drawing.Size(403, 375);
+            this.pbPosterPreview.Size = new System.Drawing.Size(453, 469);
             this.pbPosterPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPosterPreview.TabIndex = 0;
             this.pbPosterPreview.TabStop = false;
+            this.pbPosterPreview.Click += new System.EventHandler(this.pbPosterPreview_Click_1);
             // 
             // dgvFilm
             // 
             this.dgvFilm.AllowUserToAddRows = false;
+            this.dgvFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFilm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFilm.Location = new System.Drawing.Point(11, 5);
+            this.dgvFilm.Location = new System.Drawing.Point(12, 6);
             this.dgvFilm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvFilm.MultiSelect = false;
             this.dgvFilm.Name = "dgvFilm";
             this.dgvFilm.RowTemplate.Height = 28;
             this.dgvFilm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFilm.Size = new System.Drawing.Size(731, 452);
+            this.dgvFilm.Size = new System.Drawing.Size(822, 592);
             this.dgvFilm.TabIndex = 0;
             // 
             // FormUtama
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 675);
+            this.ClientSize = new System.Drawing.Size(1418, 844);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlHeader);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
