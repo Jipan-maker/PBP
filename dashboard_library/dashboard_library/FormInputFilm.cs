@@ -13,9 +13,9 @@ namespace dashboard_library
     public partial class FormInputFilm : Form
     {
         public Film FilmBaru { get; set; }
-        private bool isModeEdit = false; // Penanda apakah ini mode edit atau bukan
+        private bool isModeEdit = false;
 
-        // Pintu Masuk 1: Untuk TAMBAH FILM BARU (Bawaan)
+        // 1. Untuk TAMBAH FILM BARU
         public FormInputFilm()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace dashboard_library
             btnBatal.Click += new EventHandler(btnBatal_Click);
         }
 
-        // Pintu Masuk 2: Untuk UBAH FILM (Kita tambahkan baru)
+        // 2. Untuk UBAH FILM
         // Menerima data film lama dari FormUtama
         public FormInputFilm(Film filmYangMauDiubah)
         {

@@ -21,7 +21,7 @@ namespace dashboard_library
             InitializeComponent();
 
      // ===================================================================
-    // TEMA WARNA MODERN: PASTEL & NAVY BLUE (HEX COLOR TRANSLATOR)
+    // TEMA WARNA: PASTEL & NAVY BLUE
     // ===================================================================
 
     // 1. Latar Belakang Form Utama & Panel Tengah (pnlMain) - Biru Sangat Pucat
@@ -46,7 +46,7 @@ namespace dashboard_library
             }
 
             // 3. Teks Label & Judul Aplikasi - Biru Dongker Gelap
-            // Silakan sesuaikan nama variabel label yang ada di form kelompok Anda (contoh: lblJudul, lblTotalKoleksi)
+            // Sesuaikan nama variabel label yang ada di form (contoh: lblJudul, lblTotalKoleksi)
             if (this.lblTotalKoleksi != null) this.lblTotalKoleksi.ForeColor = ColorTranslator.FromHtml("#102A43");
             if (this.lblSutradaraPreview != null) this.lblSutradaraPreview.ForeColor = ColorTranslator.FromHtml("#102A43");
             if (this.groupBox1 != null) this.groupBox1.ForeColor = ColorTranslator.FromHtml("#102A43"); // Mewarnai teks "Preview Film"
@@ -56,7 +56,7 @@ namespace dashboard_library
 
             btnTambah.BackColor = warnaTombol;
             btnTambah.ForeColor = Color.White;
-            btnTambah.FlatStyle = FlatStyle.Flat; // Membuat tombol terlihat modern tanpa border jadul Windows
+            btnTambah.FlatStyle = FlatStyle.Flat; // Membuat tombol terlihat modern
             btnTambah.FlatAppearance.BorderSize = 0;
 
             btnUbah.BackColor = warnaTombol;
@@ -70,7 +70,7 @@ namespace dashboard_library
             btnHapus.FlatAppearance.BorderSize = 0;
 
             // 5. Kustomisasi Detail Estetika Tabel (DataGridView)
-            dgvFilm.BackgroundColor = ColorTranslator.FromHtml("#D9E2EC"); // Latar kosong tabel
+            dgvFilm.BackgroundColor = ColorTranslator.FromHtml("#D9E2EC"); // Latar tabel kosong
             dgvFilm.GridColor = ColorTranslator.FromHtml("#BCCCDC");       // Warna garis pembatas sel
 
             // Default cell style (Warna baris data standard)
@@ -117,7 +117,7 @@ namespace dashboard_library
             MuatDataDariFile();
 
             // ====================================================
-            // FIX ERROR: Perintah merapikan gambar dipindah ke saat Load
+            // Perintah merapikan gambar dipindah ke saat Load
             // ====================================================
             this.Load += new EventHandler(FormUtama_Load);
         }
@@ -142,7 +142,6 @@ namespace dashboard_library
                     teksPoster = UbahGambarKeTeks(f.Poster);
                 }
 
-                // Gabungkan semua data dipisah dengan tanda "|||"
                 string baris = $"{f.ID}|||{f.Judul}|||{f.Genre}|||{f.Tahun}|||{f.Rating}|||{f.Sutradara}|||{f.Sinopsis}|||{teksPoster}";
                 barisData.Add(baris);
             }
@@ -273,7 +272,6 @@ namespace dashboard_library
                     if (filmTerpilih.Poster != null)
                     {
                         pbPosterPreview.Image = filmTerpilih.Poster;
-                        // Pastikan di Designer SizeMode-nya sudah Zoom
                         pbPosterPreview.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                     else pbPosterPreview.Image = null;
@@ -314,13 +312,12 @@ namespace dashboard_library
         }
 
         // =======================================================
-        // FUNGSI ANTI-ERROR UNTUK MERAPIKAN GAMBAR POSTER
+        // FUNGSI UNTUK MERAPIKAN GAMBAR POSTER
         // =======================================================
         private void AturLayoutPosterTabel()
         {
             try
             {
-                // Cek apakah kolomnya ada dan siap
                 if (dgvFilm.Columns["Poster"] != null)
                 {
                     DataGridViewImageColumn colGambar = dgvFilm.Columns["Poster"] as DataGridViewImageColumn;
@@ -333,13 +330,8 @@ namespace dashboard_library
             }
             catch (Exception)
             {
-                // Abaikan jika tabel masih loading agar tidak crash
             }
         }
-
-        // =======================================================
-        // EVENT KOSONG BAWAAN DESIGNER (JANGAN DIHAPUS)
-        // =======================================================
         private void groupBox1_Enter(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void pnlHeader_Paint(object sender, PaintEventArgs e) { }
