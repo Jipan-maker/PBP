@@ -20,6 +20,7 @@ namespace dashboard_library
         {
             InitializeComponent();
             btnBrowse.Click += new EventHandler(btnBrowse_Click);
+            btnBatal.Click += new EventHandler(btnBatal_Click);
         }
 
         // Pintu Masuk 2: Untuk UBAH FILM (Kita tambahkan baru)
@@ -87,6 +88,17 @@ namespace dashboard_library
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void cbGenreInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

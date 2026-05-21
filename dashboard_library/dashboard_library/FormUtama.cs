@@ -107,6 +107,7 @@ namespace dashboard_library
             cbGenreFilter.Items.Add("Horror");
             cbGenreFilter.Items.Add("Comedy");
             cbGenreFilter.Items.Add("Fantasy");
+            cbGenreFilter.Items.Add("Animation");
             cbGenreFilter.SelectedIndex = 0;
             cbGenreFilter.SelectedIndexChanged += new EventHandler(CbGenreFilter_SelectedIndexChanged);
 
