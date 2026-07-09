@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace dashboard_bioskop
 {
-    public partial class Login : Form
+    public partial class Dashboard : Form
     {
-        public Login()
+        public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

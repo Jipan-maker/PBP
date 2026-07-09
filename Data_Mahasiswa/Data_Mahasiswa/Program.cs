@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace dashboard_bioskop
+namespace Data_Mahasiswa
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace dashboard_bioskop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Form1());
         }
     }
 }

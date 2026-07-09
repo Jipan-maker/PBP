@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dashboard_bioskop.Properties {
+namespace Penjualan_Boneka_Sederhana.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace dashboard_bioskop.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("dashboard_bioskop.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Penjualan_Boneka_Sederhana.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace dashboard_bioskop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_tiket {
+        internal static System.Drawing.Bitmap gambar {
             get {
-                object obj = ResourceManager.GetObject("logo tiket", resourceCulture);
+                object obj = ResourceManager.GetObject("gambar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
