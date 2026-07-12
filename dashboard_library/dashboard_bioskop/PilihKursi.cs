@@ -34,7 +34,7 @@ namespace dashboard_bioskop
                 // Posisi di tengah atas panel
                 int x = 20;
                 int y = 10;
-                int width = panel3.Width - 40;
+                int width = pnlLayarBioskop.Width - 40;
                 int height = 60; // Mengatur kelengkungan parabola layar
 
                 // Menggambar busur lengkung (Arc) dari sudut 200 derajat sejauh 140 derajat

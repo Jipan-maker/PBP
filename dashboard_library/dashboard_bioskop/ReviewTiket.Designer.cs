@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblYourTicket = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.pnlDetail = new System.Windows.Forms.Panel();
-            this.lblFilm = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblSeats = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblCinema = new System.Windows.Forms.Label();
-            this.lblOrder = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.pbBarcode = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblOrder = new System.Windows.Forms.Label();
+            this.lblCinema = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblSeats = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblFilm = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlDetail.SuspendLayout();
@@ -56,12 +56,21 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.Controls.Add(this.label1);
+            this.pnlHeader.Controls.Add(this.lblYourTicket);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(458, 100);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // lblYourTicket
+            // 
+            this.lblYourTicket.AutoSize = true;
+            this.lblYourTicket.Location = new System.Drawing.Point(183, 38);
+            this.lblYourTicket.Name = "lblYourTicket";
+            this.lblYourTicket.Size = new System.Drawing.Size(97, 20);
+            this.lblYourTicket.TabIndex = 0;
+            this.lblYourTicket.Text = "Your Tickets";
             // 
             // pnlFooter
             // 
@@ -71,15 +80,6 @@
             this.pnlFooter.Name = "pnlFooter";
             this.pnlFooter.Size = new System.Drawing.Size(458, 100);
             this.pnlFooter.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Your Tickets";
             // 
             // btnCheckOut
             // 
@@ -114,59 +114,62 @@
             this.pnlDetail.Size = new System.Drawing.Size(458, 594);
             this.pnlDetail.TabIndex = 2;
             // 
-            // lblFilm
+            // pbBarcode
             // 
-            this.lblFilm.AutoSize = true;
-            this.lblFilm.Location = new System.Drawing.Point(55, 64);
-            this.lblFilm.Name = "lblFilm";
-            this.lblFilm.Size = new System.Drawing.Size(38, 20);
-            this.lblFilm.TabIndex = 0;
-            this.lblFilm.Text = "Film";
+            this.pbBarcode.Location = new System.Drawing.Point(59, 459);
+            this.pbBarcode.Name = "pbBarcode";
+            this.pbBarcode.Size = new System.Drawing.Size(337, 67);
+            this.pbBarcode.TabIndex = 14;
+            this.pbBarcode.TabStop = false;
             // 
-            // lblDate
+            // textBox7
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(55, 120);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(44, 20);
-            this.lblDate.TabIndex = 1;
-            this.lblDate.Text = "Date";
+            this.textBox7.Location = new System.Drawing.Point(172, 388);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(115, 26);
+            this.textBox7.TabIndex = 13;
             // 
-            // lblTime
+            // textBox6
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(55, 176);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(43, 20);
-            this.lblTime.TabIndex = 2;
-            this.lblTime.Text = "Time";
+            this.textBox6.Location = new System.Drawing.Point(172, 334);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(115, 26);
+            this.textBox6.TabIndex = 12;
             // 
-            // lblSeats
+            // textBox5
             // 
-            this.lblSeats.AutoSize = true;
-            this.lblSeats.Location = new System.Drawing.Point(55, 232);
-            this.lblSeats.Name = "lblSeats";
-            this.lblSeats.Size = new System.Drawing.Size(51, 20);
-            this.lblSeats.TabIndex = 3;
-            this.lblSeats.Text = "Seats";
+            this.textBox5.Location = new System.Drawing.Point(172, 280);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(115, 26);
+            this.textBox5.TabIndex = 11;
             // 
-            // lblPrice
+            // textBox4
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(55, 288);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 20);
-            this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "Price";
+            this.textBox4.Location = new System.Drawing.Point(172, 226);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(115, 26);
+            this.textBox4.TabIndex = 10;
             // 
-            // lblCinema
+            // textBox3
             // 
-            this.lblCinema.AutoSize = true;
-            this.lblCinema.Location = new System.Drawing.Point(55, 344);
-            this.lblCinema.Name = "lblCinema";
-            this.lblCinema.Size = new System.Drawing.Size(63, 20);
-            this.lblCinema.TabIndex = 5;
-            this.lblCinema.Text = "Cinema";
+            this.textBox3.Location = new System.Drawing.Point(172, 172);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(115, 26);
+            this.textBox3.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(172, 118);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(115, 26);
+            this.textBox2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(172, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(115, 26);
+            this.textBox1.TabIndex = 7;
             // 
             // lblOrder
             // 
@@ -177,62 +180,59 @@
             this.lblOrder.TabIndex = 6;
             this.lblOrder.Text = "Order";
             // 
-            // textBox1
+            // lblCinema
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 26);
-            this.textBox1.TabIndex = 7;
+            this.lblCinema.AutoSize = true;
+            this.lblCinema.Location = new System.Drawing.Point(55, 344);
+            this.lblCinema.Name = "lblCinema";
+            this.lblCinema.Size = new System.Drawing.Size(63, 20);
+            this.lblCinema.TabIndex = 5;
+            this.lblCinema.Text = "Cinema";
             // 
-            // textBox2
+            // lblPrice
             // 
-            this.textBox2.Location = new System.Drawing.Point(172, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 26);
-            this.textBox2.TabIndex = 8;
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(55, 288);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(44, 20);
+            this.lblPrice.TabIndex = 4;
+            this.lblPrice.Text = "Price";
             // 
-            // textBox3
+            // lblSeats
             // 
-            this.textBox3.Location = new System.Drawing.Point(172, 172);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(115, 26);
-            this.textBox3.TabIndex = 9;
+            this.lblSeats.AutoSize = true;
+            this.lblSeats.Location = new System.Drawing.Point(55, 232);
+            this.lblSeats.Name = "lblSeats";
+            this.lblSeats.Size = new System.Drawing.Size(51, 20);
+            this.lblSeats.TabIndex = 3;
+            this.lblSeats.Text = "Seats";
             // 
-            // textBox4
+            // lblTime
             // 
-            this.textBox4.Location = new System.Drawing.Point(172, 226);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 26);
-            this.textBox4.TabIndex = 10;
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(55, 176);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(43, 20);
+            this.lblTime.TabIndex = 2;
+            this.lblTime.Text = "Time";
             // 
-            // textBox5
+            // lblDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(172, 280);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(115, 26);
-            this.textBox5.TabIndex = 11;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(55, 120);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(44, 20);
+            this.lblDate.TabIndex = 1;
+            this.lblDate.Text = "Date";
             // 
-            // textBox6
+            // lblFilm
             // 
-            this.textBox6.Location = new System.Drawing.Point(172, 334);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(115, 26);
-            this.textBox6.TabIndex = 12;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(172, 388);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(115, 26);
-            this.textBox7.TabIndex = 13;
-            // 
-            // pbBarcode
-            // 
-            this.pbBarcode.Location = new System.Drawing.Point(59, 459);
-            this.pbBarcode.Name = "pbBarcode";
-            this.pbBarcode.Size = new System.Drawing.Size(337, 67);
-            this.pbBarcode.TabIndex = 14;
-            this.pbBarcode.TabStop = false;
+            this.lblFilm.AutoSize = true;
+            this.lblFilm.Location = new System.Drawing.Point(55, 64);
+            this.lblFilm.Name = "lblFilm";
+            this.lblFilm.Size = new System.Drawing.Size(38, 20);
+            this.lblFilm.TabIndex = 0;
+            this.lblFilm.Text = "Film";
             // 
             // ReviewTiket
             // 
@@ -257,7 +257,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblYourTicket;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Panel pnlDetail;

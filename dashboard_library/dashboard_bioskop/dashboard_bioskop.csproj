@@ -70,6 +70,12 @@
     <Compile Include="Pembayaran.Designer.cs">
       <DependentUpon>Pembayaran.cs</DependentUpon>
     </Compile>
+    <Compile Include="PembayaranSukses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PembayaranSukses.Designer.cs">
+      <DependentUpon>PembayaranSukses.cs</DependentUpon>
+    </Compile>
     <Compile Include="PilihKursi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pembayaran.resx">
       <DependentUpon>Pembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PembayaranSukses.resx">
+      <DependentUpon>PembayaranSukses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PilihKursi.resx">
       <DependentUpon>PilihKursi.cs</DependentUpon>
