@@ -26,5 +26,77 @@ namespace dashboard_bioskop
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            DetailFilm formDetail = new DetailFilm();
+            formDetail.Show();
+
+            // Menyembunyikan form Dashboard
+            this.Hide();
+        }
     }
 }

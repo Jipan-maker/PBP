@@ -16,5 +16,19 @@ namespace dashboard_bioskop
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Dashboard formDashboard = new Dashboard();
+            formDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnBookTicket_Click(object sender, EventArgs e)
+        {
+            PilihKursi formKursi = new PilihKursi();
+            formKursi.Show();
+            this.Hide();
+        }
     }
 }

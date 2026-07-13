@@ -16,5 +16,24 @@ namespace dashboard_bioskop
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "admin" && txtPassword.Text == "admin123")
+            {
+                MessageBox.Show("Login Berhasil!", "Sukses");
+
+                // Memanggil dan membuka form Dashboard
+                Dashboard formDashboard = new Dashboard();
+                formDashboard.Show();
+
+                // Menyembunyikan form Login
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username atau Password salah!", "Error");
+            }
+        }
     }
 }

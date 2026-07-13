@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.flpKategori = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRoman = new System.Windows.Forms.Button();
             this.btnDrama = new System.Windows.Forms.Button();
@@ -39,17 +39,17 @@
             this.btnFantasy = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnBookmark = new System.Windows.Forms.Button();
-            this.btnTicket = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.btnBookmark = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flpNowincinemas = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpPopularMovie = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.flpPopularMovie = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -58,11 +58,11 @@
             this.flpKategori.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flpNowincinemas.SuspendLayout();
-            this.flpPopularMovie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flpPopularMovie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -79,15 +79,6 @@
             this.panel1.Size = new System.Drawing.Size(428, 100);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome Back, Nana";
-            // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(301, 32);
@@ -96,6 +87,15 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search\r\n";
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome Back, Nana";
             // 
             // flpKategori
             // 
@@ -177,23 +177,14 @@
             this.panel2.Size = new System.Drawing.Size(428, 100);
             this.panel2.TabIndex = 6;
             // 
-            // btnHome
+            // btnProfile
             // 
-            this.btnHome.Location = new System.Drawing.Point(12, 40);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 37);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home\r\n";
-            this.btnHome.UseVisualStyleBackColor = true;
-            // 
-            // btnBookmark
-            // 
-            this.btnBookmark.Location = new System.Drawing.Point(112, 40);
-            this.btnBookmark.Name = "btnBookmark";
-            this.btnBookmark.Size = new System.Drawing.Size(97, 37);
-            this.btnBookmark.TabIndex = 1;
-            this.btnBookmark.Text = "Bookmark";
-            this.btnBookmark.UseVisualStyleBackColor = true;
+            this.btnProfile.Location = new System.Drawing.Point(341, 40);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 37);
+            this.btnProfile.TabIndex = 3;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
             // 
             // btnTicket
             // 
@@ -204,14 +195,23 @@
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
             // 
-            // btnProfile
+            // btnBookmark
             // 
-            this.btnProfile.Location = new System.Drawing.Point(341, 40);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(75, 37);
-            this.btnProfile.TabIndex = 3;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnBookmark.Location = new System.Drawing.Point(112, 40);
+            this.btnBookmark.Name = "btnBookmark";
+            this.btnBookmark.Size = new System.Drawing.Size(97, 37);
+            this.btnBookmark.TabIndex = 1;
+            this.btnBookmark.Text = "Bookmark";
+            this.btnBookmark.UseVisualStyleBackColor = true;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(12, 40);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(75, 37);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.Text = "Home\r\n";
+            this.btnHome.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -236,6 +236,42 @@
             this.flpNowincinemas.Size = new System.Drawing.Size(425, 186);
             this.flpNowincinemas.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 180);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(109, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 183);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(215, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 183);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(321, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 183);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // flpPopularMovie
             // 
             this.flpPopularMovie.AutoScroll = true;
@@ -248,38 +284,6 @@
             this.flpPopularMovie.Size = new System.Drawing.Size(425, 186);
             this.flpPopularMovie.TabIndex = 9;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 180);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(109, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(215, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(321, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(3, 3);
@@ -287,6 +291,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(100, 183);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -295,6 +300,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(100, 183);
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -303,6 +309,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(100, 183);
             this.pictureBox7.TabIndex = 2;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -311,6 +318,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(100, 183);
             this.pictureBox8.TabIndex = 3;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // Dashboard
             // 
@@ -331,11 +339,11 @@
             this.flpKategori.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.flpNowincinemas.ResumeLayout(false);
-            this.flpPopularMovie.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flpPopularMovie.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

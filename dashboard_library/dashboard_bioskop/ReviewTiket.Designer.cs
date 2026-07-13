@@ -89,6 +89,7 @@
             this.btnCheckOut.TabIndex = 0;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // pnlDetail
             // 

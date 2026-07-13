@@ -42,11 +42,11 @@
             this.lblImdb = new System.Windows.Forms.Label();
             this.lblJudul = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.pbCast1 = new System.Windows.Forms.PictureBox();
             this.pbCast2 = new System.Windows.Forms.PictureBox();
             this.pbCast3 = new System.Windows.Forms.PictureBox();
             this.pbCast4 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pbPosterUtama = new System.Windows.Forms.PictureBox();
             this.pnlTombol.SuspendLayout();
             this.pnlDetail.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             this.pnlTombol.Controls.Add(this.btnBookTicket);
             this.pnlTombol.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTombol.Location = new System.Drawing.Point(0, 732);
+            this.pnlTombol.Location = new System.Drawing.Point(0, 735);
             this.pnlTombol.Name = "pnlTombol";
-            this.pnlTombol.Size = new System.Drawing.Size(458, 62);
+            this.pnlTombol.Size = new System.Drawing.Size(504, 62);
             this.pnlTombol.TabIndex = 2;
             // 
             // btnBookTicket
@@ -75,6 +75,7 @@
             this.btnBookTicket.TabIndex = 0;
             this.btnBookTicket.Text = "Book Tickets\r\n";
             this.btnBookTicket.UseVisualStyleBackColor = true;
+            this.btnBookTicket.Click += new System.EventHandler(this.btnBookTicket_Click);
             // 
             // pnlDetail
             // 
@@ -91,7 +92,7 @@
             this.pnlDetail.Controls.Add(this.flowLayoutPanel1);
             this.pnlDetail.Location = new System.Drawing.Point(0, 261);
             this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(458, 458);
+            this.pnlDetail.Size = new System.Drawing.Size(475, 459);
             this.pnlDetail.TabIndex = 3;
             // 
             // lblDeskripsi
@@ -139,7 +140,7 @@
             this.rtbSinopsis.Location = new System.Drawing.Point(3, 311);
             this.rtbSinopsis.Name = "rtbSinopsis";
             this.rtbSinopsis.ReadOnly = true;
-            this.rtbSinopsis.Size = new System.Drawing.Size(455, 144);
+            this.rtbSinopsis.Size = new System.Drawing.Size(463, 144);
             this.rtbSinopsis.TabIndex = 5;
             this.rtbSinopsis.Text = "";
             // 
@@ -190,15 +191,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(434, 108);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(82, 33);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back\r\n";
-            this.btnBack.UseVisualStyleBackColor = true;
-            // 
             // pbCast1
             // 
             this.pbCast1.Location = new System.Drawing.Point(3, 3);
@@ -231,12 +223,22 @@
             this.pbCast4.TabIndex = 3;
             this.pbCast4.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(82, 33);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back\r\n";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // pbPosterUtama
             // 
             this.pbPosterUtama.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbPosterUtama.Location = new System.Drawing.Point(0, 0);
             this.pbPosterUtama.Name = "pbPosterUtama";
-            this.pbPosterUtama.Size = new System.Drawing.Size(458, 255);
+            this.pbPosterUtama.Size = new System.Drawing.Size(504, 255);
             this.pbPosterUtama.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPosterUtama.TabIndex = 1;
             this.pbPosterUtama.TabStop = false;
@@ -245,7 +247,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 794);
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(504, 797);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlDetail);
             this.Controls.Add(this.pnlTombol);

@@ -46,6 +46,7 @@
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login\r\n";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblRegister
             // 
@@ -95,6 +96,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(326, 268);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(146, 26);
             this.txtPassword.TabIndex = 6;
             // 
@@ -111,7 +113,7 @@
             this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

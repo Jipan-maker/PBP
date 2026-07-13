@@ -16,5 +16,25 @@ namespace dashboard_bioskop
         {
             InitializeComponent();
         }
+
+        // --- KODE UNTUK TOMBOL CHECK ORDER ---
+        private void btnCheckOrder_Click(object sender, EventArgs e)
+        {
+            // Karena kita belum membuat halaman riwayat pesanan (History), 
+            // kita gunakan MessageBox sebagai simulasi bahwa tiket berhasil dicetak.
+            MessageBox.Show("Tiket elektronik Anda telah berhasil diterbitkan dan dikirim ke Email!\n\nSilakan tunjukkan tiket ini pada petugas di bioskop.",
+                            "Cek Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // --- KODE UNTUK TOMBOL BACK TO HOME ---
+        private void btnBackToHome_Click(object sender, EventArgs e)
+        {
+            // Memanggil dan membuka kembali halaman awal (Dashboard)
+            Dashboard formDashboard = new Dashboard();
+            formDashboard.Show();
+
+            // Menyembunyikan halaman sukses ini
+            this.Hide();
+        }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlFill = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCheckOrder = new System.Windows.Forms.Button();
             this.btnBackToHome = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pbemoji = new System.Windows.Forms.PictureBox();
             this.pnlFill.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -52,27 +52,6 @@
             this.pnlFill.Name = "pnlFill";
             this.pnlFill.Size = new System.Drawing.Size(458, 794);
             this.pnlFill.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(106, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Payment Successful";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 371);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(391, 52);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Congratulations,\r\nYour payment has been successful.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
             // 
@@ -93,6 +72,7 @@
             this.btnCheckOrder.TabIndex = 0;
             this.btnCheckOrder.Text = "Check Order";
             this.btnCheckOrder.UseVisualStyleBackColor = true;
+            this.btnCheckOrder.Click += new System.EventHandler(this.btnCheckOrder_Click);
             // 
             // btnBackToHome
             // 
@@ -102,6 +82,28 @@
             this.btnBackToHome.TabIndex = 1;
             this.btnBackToHome.Text = "Back To Home";
             this.btnBackToHome.UseVisualStyleBackColor = true;
+            this.btnBackToHome.Click += new System.EventHandler(this.btnBackToHome_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(41, 371);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(391, 52);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Congratulations,\r\nYour payment has been successful.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 294);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Payment Successful";
             // 
             // pbemoji
             // 

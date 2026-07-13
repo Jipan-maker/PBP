@@ -31,6 +31,7 @@
             this.pnlFill = new System.Windows.Forms.Panel();
             this.pnlLayarBioskop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnJam1 = new System.Windows.Forms.Button();
             this.btnJam2 = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.btnB2 = new System.Windows.Forms.Button();
             this.btnB3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlFill.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -127,6 +127,13 @@
             this.panel2.Size = new System.Drawing.Size(458, 305);
             this.panel2.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 226);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 7;
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.btnJam1);
@@ -147,6 +154,7 @@
             this.btnJam1.TabIndex = 0;
             this.btnJam1.Text = "13.00";
             this.btnJam1.UseVisualStyleBackColor = true;
+            this.btnJam1.Click += new System.EventHandler(this.Waktu_Click);
             // 
             // btnJam2
             // 
@@ -156,6 +164,7 @@
             this.btnJam2.TabIndex = 1;
             this.btnJam2.Text = "14.45";
             this.btnJam2.UseVisualStyleBackColor = true;
+            this.btnJam2.Click += new System.EventHandler(this.Waktu_Click);
             // 
             // btnJam3
             // 
@@ -165,6 +174,7 @@
             this.btnJam3.TabIndex = 2;
             this.btnJam3.Text = "16.30";
             this.btnJam3.UseVisualStyleBackColor = true;
+            this.btnJam3.Click += new System.EventHandler(this.Waktu_Click);
             // 
             // btnJam4
             // 
@@ -174,6 +184,7 @@
             this.btnJam4.TabIndex = 3;
             this.btnJam4.Text = "18.15";
             this.btnJam4.UseVisualStyleBackColor = true;
+            this.btnJam4.Click += new System.EventHandler(this.Waktu_Click);
             // 
             // btnJam5
             // 
@@ -183,6 +194,7 @@
             this.btnJam5.TabIndex = 4;
             this.btnJam5.Text = "20.00";
             this.btnJam5.UseVisualStyleBackColor = true;
+            this.btnJam5.Click += new System.EventHandler(this.Waktu_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -204,6 +216,7 @@
             this.btnDate1.TabIndex = 0;
             this.btnDate1.Text = "Jul 11";
             this.btnDate1.UseVisualStyleBackColor = true;
+            this.btnDate1.Click += new System.EventHandler(this.Tanggal_Click);
             // 
             // btnDate2
             // 
@@ -213,6 +226,7 @@
             this.btnDate2.TabIndex = 1;
             this.btnDate2.Text = "Jul 12";
             this.btnDate2.UseVisualStyleBackColor = true;
+            this.btnDate2.Click += new System.EventHandler(this.Tanggal_Click);
             // 
             // btnDate3
             // 
@@ -222,6 +236,7 @@
             this.btnDate3.TabIndex = 2;
             this.btnDate3.Text = "Jul 13";
             this.btnDate3.UseVisualStyleBackColor = true;
+            this.btnDate3.Click += new System.EventHandler(this.Tanggal_Click);
             // 
             // btnDate4
             // 
@@ -231,6 +246,7 @@
             this.btnDate4.TabIndex = 3;
             this.btnDate4.Text = "Jul 14";
             this.btnDate4.UseVisualStyleBackColor = true;
+            this.btnDate4.Click += new System.EventHandler(this.Tanggal_Click);
             // 
             // btnDate5
             // 
@@ -240,6 +256,7 @@
             this.btnDate5.TabIndex = 4;
             this.btnDate5.Text = "Jul 15";
             this.btnDate5.UseVisualStyleBackColor = true;
+            this.btnDate5.Click += new System.EventHandler(this.Tanggal_Click);
             // 
             // btnBuyTickets
             // 
@@ -249,6 +266,7 @@
             this.btnBuyTickets.TabIndex = 3;
             this.btnBuyTickets.Text = "Buy Tickets\r\n";
             this.btnBuyTickets.UseVisualStyleBackColor = true;
+            this.btnBuyTickets.Click += new System.EventHandler(this.btnBuyTickets_Click);
             // 
             // label4
             // 
@@ -297,6 +315,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 147);
             this.tableLayoutPanel4.TabIndex = 4;
+            this.tableLayoutPanel4.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC4
             // 
@@ -307,6 +326,7 @@
             this.btnC4.TabIndex = 0;
             this.btnC4.Text = "C4";
             this.btnC4.UseVisualStyleBackColor = true;
+            this.btnC4.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC5
             // 
@@ -317,6 +337,7 @@
             this.btnC5.TabIndex = 1;
             this.btnC5.Text = "C5";
             this.btnC5.UseVisualStyleBackColor = true;
+            this.btnC5.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC6
             // 
@@ -327,6 +348,7 @@
             this.btnC6.TabIndex = 2;
             this.btnC6.Text = "C6";
             this.btnC6.UseVisualStyleBackColor = true;
+            this.btnC6.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD4
             // 
@@ -337,6 +359,7 @@
             this.btnD4.TabIndex = 3;
             this.btnD4.Text = "D4";
             this.btnD4.UseVisualStyleBackColor = true;
+            this.btnD4.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD5
             // 
@@ -347,6 +370,7 @@
             this.btnD5.TabIndex = 4;
             this.btnD5.Text = "D5";
             this.btnD5.UseVisualStyleBackColor = true;
+            this.btnD5.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD6
             // 
@@ -357,6 +381,7 @@
             this.btnD6.TabIndex = 5;
             this.btnD6.Text = "D6";
             this.btnD6.UseVisualStyleBackColor = true;
+            this.btnD6.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -377,6 +402,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 147);
             this.tableLayoutPanel3.TabIndex = 3;
+            this.tableLayoutPanel3.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC1
             // 
@@ -387,6 +413,7 @@
             this.btnC1.TabIndex = 0;
             this.btnC1.Text = "C1";
             this.btnC1.UseVisualStyleBackColor = true;
+            this.btnC1.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC2
             // 
@@ -397,6 +424,7 @@
             this.btnC2.TabIndex = 1;
             this.btnC2.Text = "C2";
             this.btnC2.UseVisualStyleBackColor = true;
+            this.btnC2.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnC3
             // 
@@ -407,6 +435,7 @@
             this.btnC3.TabIndex = 2;
             this.btnC3.Text = "C3";
             this.btnC3.UseVisualStyleBackColor = true;
+            this.btnC3.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD1
             // 
@@ -417,6 +446,7 @@
             this.btnD1.TabIndex = 3;
             this.btnD1.Text = "D1";
             this.btnD1.UseVisualStyleBackColor = true;
+            this.btnD1.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD2
             // 
@@ -427,6 +457,7 @@
             this.btnD2.TabIndex = 4;
             this.btnD2.Text = "D2";
             this.btnD2.UseVisualStyleBackColor = true;
+            this.btnD2.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnD3
             // 
@@ -437,6 +468,7 @@
             this.btnD3.TabIndex = 5;
             this.btnD3.Text = "D3";
             this.btnD3.UseVisualStyleBackColor = true;
+            this.btnD3.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -457,6 +489,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 147);
             this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA4
             // 
@@ -467,6 +500,7 @@
             this.btnA4.TabIndex = 0;
             this.btnA4.Text = "A4";
             this.btnA4.UseVisualStyleBackColor = true;
+            this.btnA4.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA5
             // 
@@ -477,6 +511,7 @@
             this.btnA5.TabIndex = 1;
             this.btnA5.Text = "A5";
             this.btnA5.UseVisualStyleBackColor = true;
+            this.btnA5.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA6
             // 
@@ -487,6 +522,7 @@
             this.btnA6.TabIndex = 2;
             this.btnA6.Text = "A6";
             this.btnA6.UseVisualStyleBackColor = true;
+            this.btnA6.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB4
             // 
@@ -497,6 +533,7 @@
             this.btnB4.TabIndex = 3;
             this.btnB4.Text = "B4";
             this.btnB4.UseVisualStyleBackColor = true;
+            this.btnB4.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB5
             // 
@@ -507,6 +544,7 @@
             this.btnB5.TabIndex = 4;
             this.btnB5.Text = "B5";
             this.btnB5.UseVisualStyleBackColor = true;
+            this.btnB5.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB6
             // 
@@ -517,6 +555,7 @@
             this.btnB6.TabIndex = 5;
             this.btnB6.Text = "B6";
             this.btnB6.UseVisualStyleBackColor = true;
+            this.btnB6.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -537,6 +576,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 147);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA1
             // 
@@ -547,6 +587,7 @@
             this.btnA1.TabIndex = 0;
             this.btnA1.Text = "A1";
             this.btnA1.UseVisualStyleBackColor = true;
+            this.btnA1.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA2
             // 
@@ -557,6 +598,7 @@
             this.btnA2.TabIndex = 1;
             this.btnA2.Text = "A2";
             this.btnA2.UseVisualStyleBackColor = true;
+            this.btnA2.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnA3
             // 
@@ -567,6 +609,7 @@
             this.btnA3.TabIndex = 2;
             this.btnA3.Text = "A3";
             this.btnA3.UseVisualStyleBackColor = true;
+            this.btnA3.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB1
             // 
@@ -577,6 +620,7 @@
             this.btnB1.TabIndex = 3;
             this.btnB1.Text = "B1";
             this.btnB1.UseVisualStyleBackColor = true;
+            this.btnB1.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB2
             // 
@@ -587,6 +631,7 @@
             this.btnB2.TabIndex = 4;
             this.btnB2.Text = "B2";
             this.btnB2.UseVisualStyleBackColor = true;
+            this.btnB2.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // btnB3
             // 
@@ -597,6 +642,7 @@
             this.btnB3.TabIndex = 5;
             this.btnB3.Text = "B3\r\n";
             this.btnB3.UseVisualStyleBackColor = true;
+            this.btnB3.Click += new System.EventHandler(this.Kursi_Click);
             // 
             // label1
             // 
@@ -606,13 +652,6 @@
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 226);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 7;
             // 
             // PilihKursi
             // 
