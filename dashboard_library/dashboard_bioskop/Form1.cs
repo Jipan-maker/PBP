@@ -15,6 +15,10 @@ namespace dashboard_bioskop
         public Login()
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnLogin);
+            ThemeHelper.ApplyTextBoxStyle(txtUsername);
+            ThemeHelper.ApplyTextBoxStyle(txtPassword);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -34,6 +38,11 @@ namespace dashboard_bioskop
             {
                 MessageBox.Show("Username atau Password salah!", "Error");
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

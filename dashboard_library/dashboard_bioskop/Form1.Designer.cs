@@ -114,6 +114,7 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

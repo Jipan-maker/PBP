@@ -15,6 +15,9 @@ namespace dashboard_bioskop
         public PembayaranSukses()
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnBackToHome);
+            ThemeHelper.ApplyButtonStyle(btnCheckOrder);
         }
 
         // --- KODE UNTUK TOMBOL CHECK ORDER ---

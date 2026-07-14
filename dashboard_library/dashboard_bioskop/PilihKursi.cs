@@ -22,6 +22,36 @@ namespace dashboard_bioskop
         public PilihKursi()
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnA1);
+            ThemeHelper.ApplyButtonStyle(btnA2);
+            ThemeHelper.ApplyButtonStyle(btnA3);
+            ThemeHelper.ApplyButtonStyle(btnA4);
+            ThemeHelper.ApplyButtonStyle(btnA5);
+            ThemeHelper.ApplyButtonStyle(btnA6);
+            ThemeHelper.ApplyButtonStyle(btnB1);
+            ThemeHelper.ApplyButtonStyle(btnB2);
+            ThemeHelper.ApplyButtonStyle(btnB3);
+            ThemeHelper.ApplyButtonStyle(btnB4);
+            ThemeHelper.ApplyButtonStyle(btnB5);
+            ThemeHelper.ApplyButtonStyle(btnB6);
+            ThemeHelper.ApplyButtonStyle(btnC1);
+            ThemeHelper.ApplyButtonStyle(btnC2);
+            ThemeHelper.ApplyButtonStyle(btnC3);
+            ThemeHelper.ApplyButtonStyle(btnC4);
+            ThemeHelper.ApplyButtonStyle(btnC5);
+            ThemeHelper.ApplyButtonStyle(btnC6);
+            ThemeHelper.ApplyButtonStyle(btnD1);
+            ThemeHelper.ApplyButtonStyle(btnD2);
+            ThemeHelper.ApplyButtonStyle(btnD3);
+            ThemeHelper.ApplyButtonStyle(btnD4);
+            ThemeHelper.ApplyButtonStyle(btnD5);
+            ThemeHelper.ApplyButtonStyle(btnD6);
+            ThemeHelper.ApplyButtonStyle(btnBuyTickets);
+            if (flowLayoutPanel1 != null)
+                flowLayoutPanel1.BackColor = ThemeHelper.BackColorDark;
+            if (flowLayoutPanel2 != null)
+                flowLayoutPanel2.BackColor = ThemeHelper.BackColorDark;
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -15,6 +15,9 @@ namespace dashboard_bioskop
         public DetailFilm()
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnBack);
+            ThemeHelper.ApplyButtonStyle(btnBookTicket);
         }
 
         private void btnBack_Click(object sender, EventArgs e)

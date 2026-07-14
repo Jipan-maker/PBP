@@ -94,6 +94,7 @@
     <Compile Include="ReviewTiket.Designer.cs">
       <DependentUpon>ReviewTiket.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemeHelper.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

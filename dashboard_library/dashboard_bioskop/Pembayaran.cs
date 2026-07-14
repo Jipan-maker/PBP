@@ -15,6 +15,8 @@ namespace dashboard_bioskop
         public Pembayaran()
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnPayNow);
         }
 
         // --- KODE UNTUK TOMBOL PAY ---
