@@ -1,85 +1,73 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace dashboard_bioskop
 {
     public static class ThemeHelper
     {
-        // Warna Utama Aplikasi
-        public static readonly Color BackColorDark = Color.FromArgb(18, 18, 18);
-        public static readonly Color CardColorDark = Color.FromArgb(30, 30, 30);
-        public static readonly Color NeonYellow = Color.FromArgb(255, 255, 0);
+        // Palet Warna Light Mode yang Terang dan Bersih
+        public static readonly Color BackColorLight = Color.FromArgb(245, 245, 247);  // Latar belakang form terang (Off-White)
+        public static readonly Color CardColorLight = Color.FromArgb(255, 255, 255);  // Putih bersih untuk kontainer/panel
+        public static readonly Color AccentColor = Color.FromArgb(0, 122, 255);       // Biru Modern untuk tombol & fokus
+        public static readonly Color TextDark = Color.FromArgb(29, 29, 31);           // Abu-abu sangat gelap untuk teks utama (bukan hitam pekat)
+        public static readonly Color TextSecondary = Color.FromArgb(134, 134, 139);   // Abu-abu sedang untuk teks keterangan/sub-judul
 
-        // Gaya Dasar Form (Dark Mode)
-        public static void ApplyFormStyle(Form form, int width = 480, int height = 850)
+        /// <summary>
+        /// Mengatur gaya dasar Form agar menjadi Light Mode yang cerah
+        /// </summary>
+        public static void ApplyFormStyle(Form form)
         {
-            form.Size = new Size(width, height);
             form.StartPosition = FormStartPosition.CenterScreen;
-            form.MaximizeBox = false;
-            form.FormBorderStyle = FormBorderStyle.FixedSingle;
-            form.BackColor = BackColorDark;
+            form.BackColor = BackColorLight;
+            form.ForeColor = TextDark; // Mengubah warna default teks form menjadi gelap
         }
 
-        // Gaya Tombol Utama (Kuning Neon)
+        /// <summary>
+        /// Mengatur gaya tombol agar teksnya terlihat jelas (Gaya Transparan-Biru)
+        /// </summary>
         public static void ApplyButtonStyle(Button btn)
         {
             if (btn == null) return;
 
             btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 0;
-            btn.BackColor = NeonYellow;
-            btn.ForeColor = Color.Black;
-            btn.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            btn.FlatAppearance.BorderSize = 1;
+            btn.FlatAppearance.BorderColor = AccentColor; // Garis tepi biru
+            btn.BackColor = CardColorLight;               // Latar belakang putih bersih
+            btn.ForeColor = AccentColor;                  // Teks biru (DIJAMIN KELIHATAN)
+            btn.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
             btn.Cursor = Cursors.Hand;
-
-            btn.Paint += Component_RoundCorners_Paint;
         }
 
-        // Gaya Kotak Input / Output (TextBox)
+        /// <summary>
+        /// Mengatur gaya kotak input TextBox agar rapi di tema terang
+        /// </summary>
         public static void ApplyTextBoxStyle(TextBox txt)
         {
             if (txt == null) return;
 
-            txt.BackColor = CardColorDark;
-            txt.ForeColor = Color.White;
-            txt.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txt.BackColor = CardColorLight;
+            txt.ForeColor = TextDark;
+            txt.Font = new Font("Segoe UI", 11, FontStyle.Regular);
             txt.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        // Logika Menggambar Sudut Tumpul (Rounded)
-        private static void Component_RoundCorners_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            int radius = 20;
-            GraphicsPath path = new GraphicsPath();
-            Control control = (Control)sender;
-
-            path.AddArc(0, 0, radius, radius, 180, 90);
-            path.AddArc(control.Width - radius, 0, radius, radius, 270, 90);
-            path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90);
-            path.AddArc(0, control.Height - radius, radius, radius, 90, 90);
-
-            control.Region = new Region(path);
-        }
-
-        // Logika Menggambar Layar Bioskop Melengkung (Bebas Merah)
+        /// <summary>
+        /// Menggambar layar bioskop melengkung dengan warna biru cerah
+        /// </summary>
         public static void DrawCinemaScreen(object sender, PaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-            // Mengambil ukuran asli dari komponen yang memanggil secara otomatis
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             Control komponenLayar = (Control)sender;
 
-            using (Pen neonPen = new Pen(NeonYellow, 5))
+            using (Pen bluePen = new Pen(AccentColor, 4))
             {
-                int x = 20;
-                int y = 10;
-                int width = komponenLayar.Width - 40; // Presisi otomatis mengikuti lebar panel3
-                int height = 60;
+                int x = 30;
+                int y = 15;
+                int width = komponenLayar.Width - 60;
+                int height = 50;
 
-                e.Graphics.DrawArc(neonPen, x, y, width, height, 200, 140);
+                e.Graphics.DrawArc(bluePen, x, y, width, height, 200, 140);
             }
         }
     }

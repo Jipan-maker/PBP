@@ -22,7 +22,7 @@ namespace dashboard_bioskop
             // Mewarnai FlowLayoutPanel tempat list poster film agar menyatu dengan background gelap
             if (flpKategori != null)
             {
-                flpKategori.BackColor = ThemeHelper.BackColorDark;
+                flpKategori.BackColor = ThemeHelper.BackColorLight;
             }
 
             // Mengatur style teks judul (label3) menjadi putih dan modern
@@ -38,9 +38,9 @@ namespace dashboard_bioskop
             {
                 if (pic != null)
                 {
-                    pic.SizeMode = PictureBoxSizeMode.StretchImage; // Gambar otomatis pas pas kotak
-                    pic.BackColor = ThemeHelper.CardColorDark;     // Background abu gelap jika gambar belum di-load
-                    pic.Cursor = Cursors.Hand;                     // Mengubah kursor jadi tangan saat diarahkan ke poster
+                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pic.BackColor = Color.LightGray; // Warna abu-abu terang sebagai pengganti kotak hitam kosong
+                    pic.Cursor = Cursors.Hand;
                 }
             }
         }

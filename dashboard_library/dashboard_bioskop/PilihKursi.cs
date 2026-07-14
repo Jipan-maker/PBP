@@ -49,9 +49,9 @@ namespace dashboard_bioskop
             ThemeHelper.ApplyButtonStyle(btnD6);
             ThemeHelper.ApplyButtonStyle(btnBuyTickets);
             if (flowLayoutPanel1 != null)
-                flowLayoutPanel1.BackColor = ThemeHelper.BackColorDark;
+                flowLayoutPanel1.BackColor = ThemeHelper.BackColorLight;
             if (flowLayoutPanel2 != null)
-                flowLayoutPanel2.BackColor = ThemeHelper.BackColorDark;
+                flowLayoutPanel2.BackColor = ThemeHelper.BackColorLight;
         }
 
         private void label2_Click(object sender, EventArgs e)
