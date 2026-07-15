@@ -16,6 +16,12 @@ namespace dashboard_bioskop
         public ReviewTiket(string tanggal, string waktu, string kursi, string harga)
         {
             InitializeComponent();
+            ThemeHelper.ApplyFormStyle(this);
+            ThemeHelper.ApplyButtonStyle(btnCheckOut);
+            if (pnlHeader != null)
+                pnlHeader.BackColor = ThemeHelper.BackColorLight;
+
+
 
             // --- MENGISI TEXTBOX SESUAI URUTAN GAMBARMU ---
 

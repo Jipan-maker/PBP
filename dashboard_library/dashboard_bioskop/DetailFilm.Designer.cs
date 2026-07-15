@@ -48,6 +48,7 @@
             this.pbCast4 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.pbPosterUtama = new System.Windows.Forms.PictureBox();
+            this.btnUpdateFilm = new System.Windows.Forms.Button();
             this.pnlTombol.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // pnlTombol
             // 
+            this.pnlTombol.Controls.Add(this.btnUpdateFilm);
             this.pnlTombol.Controls.Add(this.btnBookTicket);
             this.pnlTombol.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlTombol.Location = new System.Drawing.Point(0, 735);
@@ -69,7 +71,7 @@
             // 
             // btnBookTicket
             // 
-            this.btnBookTicket.Location = new System.Drawing.Point(178, 18);
+            this.btnBookTicket.Location = new System.Drawing.Point(35, 18);
             this.btnBookTicket.Name = "btnBookTicket";
             this.btnBookTicket.Size = new System.Drawing.Size(116, 32);
             this.btnBookTicket.TabIndex = 0;
@@ -243,6 +245,15 @@
             this.pbPosterUtama.TabIndex = 1;
             this.pbPosterUtama.TabStop = false;
             // 
+            // btnUpdateFilm
+            // 
+            this.btnUpdateFilm.Location = new System.Drawing.Point(308, 18);
+            this.btnUpdateFilm.Name = "btnUpdateFilm";
+            this.btnUpdateFilm.Size = new System.Drawing.Size(125, 32);
+            this.btnUpdateFilm.TabIndex = 1;
+            this.btnUpdateFilm.Text = "Update Film";
+            this.btnUpdateFilm.UseVisualStyleBackColor = true;
+            // 
             // DetailFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -291,5 +302,6 @@
         private System.Windows.Forms.PictureBox pbCast3;
         private System.Windows.Forms.PictureBox pbCast4;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnUpdateFilm;
     }
 }

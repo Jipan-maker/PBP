@@ -34,8 +34,23 @@ namespace dashboard_bioskop
             btn.FlatAppearance.BorderSize = 1;
             btn.FlatAppearance.BorderColor = AccentColor; // Garis tepi biru
             btn.BackColor = CardColorLight;               // Latar belakang putih bersih
-            btn.ForeColor = AccentColor;                  // Teks biru (DIJAMIN KELIHATAN)
-            btn.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
+            btn.ForeColor = AccentColor;                  // Teks biru
+
+            // 1. Amankan tinggi tombol (Jika tingginya di bawah 35, kita paksa jadi 35 agar tidak terpotong)
+            if (btn.Height < 35)
+            {
+                btn.Height = 35;
+            }
+
+            // 2. Gunakan ukuran font yang sedikit lebih fleksibel (9pt)
+            btn.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+
+            // 3. Pastikan teks berada tepat di tengah-tengah tombol secara vertikal & horizontal
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+
+            // 4. Buang semua padding dalam tombol yang bisa memotong teks
+            btn.Padding = new Padding(0);
+
             btn.Cursor = Cursors.Hand;
         }
 
@@ -69,6 +84,19 @@ namespace dashboard_bioskop
 
                 e.Graphics.DrawArc(bluePen, x, y, width, height, 200, 140);
             }
+        }
+
+        /// <summary>
+        /// Mengatur gaya kotak input RichTextBox agar rapi di tema terang
+        /// </summary>
+        public static void ApplyRichTextBoxStyle(RichTextBox rtb)
+        {
+            if (rtb == null) return;
+
+            rtb.BackColor = CardColorLight;
+            rtb.ForeColor = TextDark;
+            rtb.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            rtb.BorderStyle = BorderStyle.FixedSingle;
         }
     }
 }

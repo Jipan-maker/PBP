@@ -110,5 +110,10 @@ namespace dashboard_bioskop
         {
 
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

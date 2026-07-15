@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.flpKategori.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -238,6 +240,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 180);
@@ -247,6 +250,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox2.Location = new System.Drawing.Point(109, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 183);
@@ -256,6 +260,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox3.Location = new System.Drawing.Point(215, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 183);
@@ -265,6 +270,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox4.Location = new System.Drawing.Point(321, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 183);
@@ -286,6 +292,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox5.Location = new System.Drawing.Point(3, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 183);
@@ -295,6 +302,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox6.Location = new System.Drawing.Point(109, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 183);
@@ -304,6 +312,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox7.Location = new System.Drawing.Point(215, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 183);
@@ -313,12 +322,21 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox8.Location = new System.Drawing.Point(321, 3);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 183);
             this.pictureBox8.TabIndex = 3;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Text = "Hapus Film";
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // Dashboard
             // 
@@ -382,5 +400,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
