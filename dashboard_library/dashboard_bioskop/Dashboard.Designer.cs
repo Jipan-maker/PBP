@@ -46,29 +46,14 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flpNowincinemas = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.flpPopularMovie = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.hapusFilmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flpPopularMovie = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.flpKategori.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flpNowincinemas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.flpPopularMovie.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,6 +96,7 @@
             this.flpKategori.Name = "flpKategori";
             this.flpKategori.Size = new System.Drawing.Size(428, 47);
             this.flpKategori.TabIndex = 1;
+            this.flpKategori.Paint += new System.Windows.Forms.PaintEventHandler(this.flpKategori_Paint);
             // 
             // btnRoman
             // 
@@ -203,8 +189,9 @@
             this.btnBookmark.Name = "btnBookmark";
             this.btnBookmark.Size = new System.Drawing.Size(97, 37);
             this.btnBookmark.TabIndex = 1;
-            this.btnBookmark.Text = "Bookmark";
+            this.btnBookmark.Text = "Add";
             this.btnBookmark.UseVisualStyleBackColor = true;
+            this.btnBookmark.Click += new System.EventHandler(this.btnBookmark_Click);
             // 
             // btnHome
             // 
@@ -229,114 +216,45 @@
             // flpNowincinemas
             // 
             this.flpNowincinemas.AutoScroll = true;
-            this.flpNowincinemas.Controls.Add(this.pictureBox1);
-            this.flpNowincinemas.Controls.Add(this.pictureBox2);
-            this.flpNowincinemas.Controls.Add(this.pictureBox3);
-            this.flpNowincinemas.Controls.Add(this.pictureBox4);
+            this.flpNowincinemas.ContextMenuStrip = this.contextMenuStrip1;
             this.flpNowincinemas.Location = new System.Drawing.Point(3, 200);
             this.flpNowincinemas.Name = "flpNowincinemas";
             this.flpNowincinemas.Size = new System.Drawing.Size(425, 186);
             this.flpNowincinemas.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 180);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox2.Location = new System.Drawing.Point(109, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox3.Location = new System.Drawing.Point(215, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox4.Location = new System.Drawing.Point(321, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // flpPopularMovie
-            // 
-            this.flpPopularMovie.AutoScroll = true;
-            this.flpPopularMovie.Controls.Add(this.pictureBox5);
-            this.flpPopularMovie.Controls.Add(this.pictureBox6);
-            this.flpPopularMovie.Controls.Add(this.pictureBox7);
-            this.flpPopularMovie.Controls.Add(this.pictureBox8);
-            this.flpPopularMovie.Location = new System.Drawing.Point(0, 452);
-            this.flpPopularMovie.Name = "flpPopularMovie";
-            this.flpPopularMovie.Size = new System.Drawing.Size(425, 186);
-            this.flpPopularMovie.TabIndex = 9;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox6.Location = new System.Drawing.Point(109, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox7.Location = new System.Drawing.Point(215, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox8.Location = new System.Drawing.Point(321, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 183);
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.flpNowincinemas.Click += new System.EventHandler(this.Poster_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.hapusFilmToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 40);
             this.contextMenuStrip1.Text = "Hapus Film";
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip1.Click += new System.EventHandler(this.hapusFilmToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
+            // 
+            // hapusFilmToolStripMenuItem
+            // 
+            this.hapusFilmToolStripMenuItem.Name = "hapusFilmToolStripMenuItem";
+            this.hapusFilmToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.hapusFilmToolStripMenuItem.Text = "Hapus Film";
+            // 
+            // flpPopularMovie
+            // 
+            this.flpPopularMovie.AutoScroll = true;
+            this.flpPopularMovie.ContextMenuStrip = this.contextMenuStrip1;
+            this.flpPopularMovie.Location = new System.Drawing.Point(0, 452);
+            this.flpPopularMovie.Name = "flpPopularMovie";
+            this.flpPopularMovie.Size = new System.Drawing.Size(425, 186);
+            this.flpPopularMovie.TabIndex = 9;
+            this.flpPopularMovie.Click += new System.EventHandler(this.Poster_Click);
             // 
             // Dashboard
             // 
@@ -357,16 +275,7 @@
             this.panel1.PerformLayout();
             this.flpKategori.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.flpNowincinemas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.flpPopularMovie.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,15 +300,9 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flpNowincinemas;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.FlowLayoutPanel flpPopularMovie;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem hapusFilmToolStripMenuItem;
     }
 }

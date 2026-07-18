@@ -82,6 +82,7 @@
             this.pbLogo.Location = new System.Drawing.Point(225, 57);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(220, 97);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
             // 

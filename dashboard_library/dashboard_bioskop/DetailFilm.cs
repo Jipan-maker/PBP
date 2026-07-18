@@ -1,65 +1,70 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace dashboard_bioskop
 {
     public partial class DetailFilm : Form
     {
-        // 1. String koneksi database SQL Server Anda
-        private string connString = @"Data Source=localhost;Initial Catalog=db_bioskop;Integrated Security=True";
+        private string connString = "server=localhost;database=db_bioskop;uid=root;pwd=;";
+        private int currentMovieId;
+        private string lokasiPoster = "";
 
-        // 2. ID Film yang sedang aktif dibuka
-        private int currentMovieId = 1;
-
-        public DetailFilm()
+        public DetailFilm(int idDariDashboard)
         {
             InitializeComponent();
+            currentMovieId = idDariDashboard;
 
-            // Terapkan style otomatis dari ThemeHelper
             ThemeHelper.ApplyFormStyle(this);
-            ThemeHelper.ApplyButtonStyle(btnBack);
-
-            // Periksa jika Anda memiliki button book ticket & update di designer Anda
+            if (btnBack != null) ThemeHelper.ApplyButtonStyle(btnBack);
             if (btnBookTicket != null) ThemeHelper.ApplyButtonStyle(btnBookTicket);
             if (btnUpdateFilm != null) ThemeHelper.ApplyButtonStyle(btnUpdateFilm);
 
-            // Terapkan style untuk TextBox Rating & RichTextBox Deskripsi
-            ThemeHelper.ApplyTextBoxStyle(textBox1);
-            ThemeHelper.ApplyTextBoxStyle(textBox2);
-            ThemeHelper.ApplyTextBoxStyle(textBox3);
-            ThemeHelper.ApplyRichTextBoxStyle(rtbSinopsis); // Styling untuk RichTextBox
+            if (textBox1 != null) ThemeHelper.ApplyTextBoxStyle(textBox1);
+            if (textBox2 != null) ThemeHelper.ApplyTextBoxStyle(textBox2);
+            if (textBox3 != null) ThemeHelper.ApplyTextBoxStyle(textBox3);
+            if (txtJudul != null) ThemeHelper.ApplyTextBoxStyle(txtJudul);
+            if (txtKategori != null) ThemeHelper.ApplyTextBoxStyle(txtKategori);
+            if (rtbSinopsis != null) ThemeHelper.ApplyRichTextBoxStyle(rtbSinopsis);
 
-            // Load data film secara otomatis saat halaman dibuka
             LoadDetailFilm();
         }
 
-        // ==========================================
-        // READ: Mengambil data film dari SQL Server
-        // ==========================================
         private void LoadDetailFilm()
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                // Query mengambil judul, deskripsi, dan ketiga rating
-                string query = "SELECT title, description, rating_imdb, rating_rotten, rating_ign FROM movies WHERE id_movie = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "SELECT judul, deskripsi, rating_imdb, rating_rotten, rating_ign, file_poster, kategori FROM tb_film WHERE id_film = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", currentMovieId);
 
                 try
                 {
                     conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
                     if (reader.Read())
                     {
-                        // Set nilai ke komponen sesuai visual Anda
-                        lblJudul.Text = reader["title"].ToString();
-                        rtbSinopsis.Text = reader["description"].ToString(); // Memasukkan teks ke RichTextBox
+                        if (txtJudul != null) txtJudul.Text = reader["judul"].ToString();
+                        if (rtbSinopsis != null) rtbSinopsis.Text = reader["deskripsi"].ToString();
+                        if (textBox1 != null) textBox1.Text = reader["rating_imdb"].ToString();
+                        if (textBox2 != null) textBox2.Text = reader["rating_rotten"].ToString();
+                        if (textBox3 != null) textBox3.Text = reader["rating_ign"].ToString();
+                        if (txtKategori != null) txtKategori.Text = reader["kategori"].ToString();
 
-                        textBox1.Text = reader["rating_imdb"].ToString();
-                        textBox2.Text = reader["rating_rotten"].ToString();
-                        textBox3.Text = reader["rating_ign"].ToString();
+                        lokasiPoster = reader["file_poster"].ToString();
+
+                        if (!string.IsNullOrEmpty(lokasiPoster) && File.Exists(lokasiPoster))
+                        {
+                            pbPosterUtama.Image = Image.FromFile(lokasiPoster);
+                            pbPosterUtama.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                        else
+                        {
+                            pbPosterUtama.Image = null;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -69,50 +74,51 @@ namespace dashboard_bioskop
             }
         }
 
-        // ==========================================
-        // UPDATE: Menyimpan hasil edit ke SQL Server
-        // ==========================================
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void pbPosterUtama_Click(object sender, EventArgs e)
         {
-            // Validasi sederhana agar data tidak kosong
-            if (string.IsNullOrEmpty(lblJudul.Text) || string.IsNullOrEmpty(rtbSinopsis.Text))
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Pilih Gambar Poster";
+            ofd.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Judul dan Deskripsi film tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lokasiPoster = ofd.FileName;
+                pbPosterUtama.Image = Image.FromFile(lokasiPoster);
+                pbPosterUtama.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void btnUpdateFilm_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtJudul.Text) || string.IsNullOrEmpty(rtbSinopsis.Text))
+            {
+                MessageBox.Show("Judul dan Deskripsi tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                // Query UPDATE untuk memperbarui deskripsi dan 3 rating sekaligus
-                string query = @"UPDATE movies 
-                                 SET description = @desc, 
-                                     rating_imdb = @imdb, 
-                                     rating_rotten = @rotten, 
-                                     rating_ign = @ign 
-                                 WHERE id_movie = @id";
+                string query = @"UPDATE tb_film 
+                                 SET judul = @judul, deskripsi = @desc, rating_imdb = @imdb, rating_rotten = @rotten, rating_ign = @ign, file_poster = @poster, kategori = @kategori
+                                 WHERE id_film = @id";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                // Ambil nilai dari RichTextBox dan TextBox rating Anda
-                cmd.Parameters.AddWithValue("@desc", rtbSinopsis.Text); // Membaca teks dari RichTextBox
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@judul", txtJudul.Text);
+                cmd.Parameters.AddWithValue("@desc", rtbSinopsis.Text);
                 cmd.Parameters.AddWithValue("@imdb", textBox1.Text);
                 cmd.Parameters.AddWithValue("@rotten", textBox2.Text);
                 cmd.Parameters.AddWithValue("@ign", textBox3.Text);
+                cmd.Parameters.AddWithValue("@poster", lokasiPoster);
+                cmd.Parameters.AddWithValue("@kategori", txtKategori.Text);
                 cmd.Parameters.AddWithValue("@id", currentMovieId);
 
                 try
                 {
                     conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Data film berhasil diperbarui (UPDATE) ke database!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0) MessageBox.Show("Data, Kategori & Poster Berhasil Diupdate!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Gagal memperbarui data film: " + ex.Message, "Error Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                catch (Exception ex) { MessageBox.Show("Gagal Update: " + ex.Message); }
             }
         }
 
@@ -125,9 +131,15 @@ namespace dashboard_bioskop
 
         private void btnBookTicket_Click(object sender, EventArgs e)
         {
-            PilihKursi formKursi = new PilihKursi();
+            string judulFilm = txtJudul != null ? txtJudul.Text : "Judul Tidak Diketahui";
+            PilihKursi formKursi = new PilihKursi(judulFilm);
             formKursi.Show();
             this.Hide();
+        }
+
+        private void DetailFilm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

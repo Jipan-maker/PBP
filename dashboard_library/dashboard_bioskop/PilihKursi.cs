@@ -1,82 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace dashboard_bioskop
 {
     public partial class PilihKursi : Form
     {
-        // 1. Variabel untuk menyimpan "ingatan" aplikasi
         int hargaPerTiket = 35000;
         int totalBelanja = 0;
-        List<string> listKursi = new List<string>(); // Ingat kursi yang dipilih
-        string tanggalPilihan = "";                  // Ingat tanggal
-        string waktuPilihan = "";                    // Ingat waktu
+        List<string> listKursi = new List<string>();
+        string tanggalPilihan = "";
+        string waktuPilihan = "";
+                  
+        string judulFilmTerpilih = "";
 
-        public PilihKursi()
+        public PilihKursi(string judulDariDetail)
         {
             InitializeComponent();
+
+            judulFilmTerpilih = judulDariDetail;
+
             ThemeHelper.ApplyFormStyle(this);
-            ThemeHelper.ApplyButtonStyle(btnA1);
-            ThemeHelper.ApplyButtonStyle(btnA2);
-            ThemeHelper.ApplyButtonStyle(btnA3);
-            ThemeHelper.ApplyButtonStyle(btnA4);
-            ThemeHelper.ApplyButtonStyle(btnA5);
-            ThemeHelper.ApplyButtonStyle(btnA6);
-            ThemeHelper.ApplyButtonStyle(btnB1);
-            ThemeHelper.ApplyButtonStyle(btnB2);
-            ThemeHelper.ApplyButtonStyle(btnB3);
-            ThemeHelper.ApplyButtonStyle(btnB4);
-            ThemeHelper.ApplyButtonStyle(btnB5);
-            ThemeHelper.ApplyButtonStyle(btnB6);
-            ThemeHelper.ApplyButtonStyle(btnC1);
-            ThemeHelper.ApplyButtonStyle(btnC2);
-            ThemeHelper.ApplyButtonStyle(btnC3);
-            ThemeHelper.ApplyButtonStyle(btnC4);
-            ThemeHelper.ApplyButtonStyle(btnC5);
-            ThemeHelper.ApplyButtonStyle(btnC6);
-            ThemeHelper.ApplyButtonStyle(btnD1);
-            ThemeHelper.ApplyButtonStyle(btnD2);
-            ThemeHelper.ApplyButtonStyle(btnD3);
-            ThemeHelper.ApplyButtonStyle(btnD4);
-            ThemeHelper.ApplyButtonStyle(btnD5);
-            ThemeHelper.ApplyButtonStyle(btnD6);
-            ThemeHelper.ApplyButtonStyle(btnBuyTickets);
-            if (flowLayoutPanel1 != null)
-                flowLayoutPanel1.BackColor = ThemeHelper.BackColorLight;
-            if (flowLayoutPanel2 != null)
-                flowLayoutPanel2.BackColor = ThemeHelper.BackColorLight;
+            if (btnA1 != null) ThemeHelper.ApplyButtonStyle(btnA1);
+            if (btnA2 != null) ThemeHelper.ApplyButtonStyle(btnA2);
+            if (btnA3 != null) ThemeHelper.ApplyButtonStyle(btnA3);
+            if (btnA4 != null) ThemeHelper.ApplyButtonStyle(btnA4);
+            if (btnA5 != null) ThemeHelper.ApplyButtonStyle(btnA5);
+            if (btnA6 != null) ThemeHelper.ApplyButtonStyle(btnA6);
+            if (btnB1 != null) ThemeHelper.ApplyButtonStyle(btnB1);
+            if (btnB2 != null) ThemeHelper.ApplyButtonStyle(btnB2);
+            if (btnB3 != null) ThemeHelper.ApplyButtonStyle(btnB3);
+            if (btnB4 != null) ThemeHelper.ApplyButtonStyle(btnB4);
+            if (btnB5 != null) ThemeHelper.ApplyButtonStyle(btnB5);
+            if (btnB6 != null) ThemeHelper.ApplyButtonStyle(btnB6);
+            if (btnC1 != null) ThemeHelper.ApplyButtonStyle(btnC1);
+            if (btnC2 != null) ThemeHelper.ApplyButtonStyle(btnC2);
+            if (btnC3 != null) ThemeHelper.ApplyButtonStyle(btnC3);
+            if (btnC4 != null) ThemeHelper.ApplyButtonStyle(btnC4);
+            if (btnC5 != null) ThemeHelper.ApplyButtonStyle(btnC5);
+            if (btnC6 != null) ThemeHelper.ApplyButtonStyle(btnC6);
+            if (btnD1 != null) ThemeHelper.ApplyButtonStyle(btnD1);
+            if (btnD2 != null) ThemeHelper.ApplyButtonStyle(btnD2);
+            if (btnD3 != null) ThemeHelper.ApplyButtonStyle(btnD3);
+            if (btnD4 != null) ThemeHelper.ApplyButtonStyle(btnD4);
+            if (btnD5 != null) ThemeHelper.ApplyButtonStyle(btnD5);
+            if (btnD6 != null) ThemeHelper.ApplyButtonStyle(btnD6);
+            if (btnBuyTickets != null) ThemeHelper.ApplyButtonStyle(btnBuyTickets);
+
+            if (flowLayoutPanel1 != null) flowLayoutPanel1.BackColor = ThemeHelper.BackColorLight;
+            if (flowLayoutPanel2 != null) flowLayoutPanel2.BackColor = ThemeHelper.BackColorLight;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        private void label2_Click(object sender, EventArgs e) { }
 
-        }
-
-        // 2. Kode ASLI milikmu untuk menggambar layar melengkung
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
             using (Pen neonPen = new Pen(Color.FromArgb(255, 255, 0), 5))
             {
                 int x = 20;
                 int y = 10;
-                // Pastikan nama panelnya sesuai dengan desainmu (misal: pnlLayarBioskop atau panel3)
-                int width = pnlLayarBioskop.Width - 40;
-                int height = 60;
-
-                e.Graphics.DrawArc(neonPen, x, y, width, height, 200, 140);
+                if (pnlLayarBioskop != null)
+                {
+                    int width = pnlLayarBioskop.Width - 40;
+                    int height = 60;
+                    e.Graphics.DrawArc(neonPen, x, y, width, height, 200, 140);
+                }
             }
         }
 
-        // 3. Kode untuk mengubah warna Kursi dan menghitung harga
         private void Kursi_Click(object sender, EventArgs e)
         {
             Button kursiYangDiklik = (Button)sender;
@@ -94,11 +87,9 @@ namespace dashboard_bioskop
                 listKursi.Remove(kursiYangDiklik.Text);
             }
 
-            // CATATAN: Ubah "textBox1" menjadi nama TextBox Total Price milikmu jika berbeda
-            textBox1.Text = "Rp " + totalBelanja.ToString("N0");
+            if (textBox1 != null) textBox1.Text = "Rp " + totalBelanja.ToString("N0");
         }
 
-        // 4. Kode untuk mencatat Tanggal yang diklik
         private void Tanggal_Click(object sender, EventArgs e)
         {
             Button tombolTanggal = (Button)sender;
@@ -106,7 +97,6 @@ namespace dashboard_bioskop
             MessageBox.Show("Tanggal dipilih: " + tanggalPilihan, "Info Tanggal");
         }
 
-        // 5. Kode untuk mencatat Waktu yang diklik
         private void Waktu_Click(object sender, EventArgs e)
         {
             Button tombolWaktu = (Button)sender;
@@ -114,21 +104,16 @@ namespace dashboard_bioskop
             MessageBox.Show("Waktu dipilih: " + waktuPilihan, "Info Waktu");
         }
 
-        // 6. Kode untuk Tombol Buy Tickets
         private void btnBuyTickets_Click(object sender, EventArgs e)
         {
-            // Cek apakah user sudah melengkapi pilihan
             if (tanggalPilihan == "" || waktuPilihan == "" || listKursi.Count == 0)
             {
                 MessageBox.Show("Mohon pilih Tanggal, Waktu, dan minimal 1 Kursi terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Gabungkan list kursi dari [A1, A2] menjadi teks "A1, A2"
             string gabunganKursi = string.Join(", ", listKursi);
-
-            // Buka form Review Tiket dan LEMPAR datanya
-            ReviewTiket formReview = new ReviewTiket(tanggalPilihan, waktuPilihan, gabunganKursi, totalBelanja.ToString());
+            ReviewTiket formReview = new ReviewTiket(judulFilmTerpilih, tanggalPilihan, waktuPilihan, gabunganKursi, totalBelanja.ToString());
             formReview.Show();
             this.Hide();
         }

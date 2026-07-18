@@ -27,11 +27,9 @@ namespace dashboard_bioskop
             {
                 MessageBox.Show("Login Berhasil!", "Sukses");
 
-                // Memanggil dan membuka form Dashboard
                 Dashboard formDashboard = new Dashboard();
                 formDashboard.Show();
 
-                // Menyembunyikan form Login
                 this.Hide();
             }
             else

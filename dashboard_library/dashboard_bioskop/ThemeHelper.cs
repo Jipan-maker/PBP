@@ -7,9 +7,9 @@ namespace dashboard_bioskop
     public static class ThemeHelper
     {
         // Palet Warna Light Mode yang Terang dan Bersih
-        public static readonly Color BackColorLight = Color.FromArgb(245, 245, 247);  // Latar belakang form terang (Off-White)
+        public static readonly Color BackColorLight = Color.FromArgb(253, 246, 237);  // Latar belakang form terang (Off-White)
         public static readonly Color CardColorLight = Color.FromArgb(255, 255, 255);  // Putih bersih untuk kontainer/panel
-        public static readonly Color AccentColor = Color.FromArgb(0, 122, 255);       // Biru Modern untuk tombol & fokus
+        public static readonly Color AccentColor = Color.FromArgb(161, 188, 152);       // Biru Modern untuk tombol & fokus
         public static readonly Color TextDark = Color.FromArgb(29, 29, 31);           // Abu-abu sangat gelap untuk teks utama (bukan hitam pekat)
         public static readonly Color TextSecondary = Color.FromArgb(134, 134, 139);   // Abu-abu sedang untuk teks keterangan/sub-judul
 
@@ -30,11 +30,11 @@ namespace dashboard_bioskop
         {
             if (btn == null) return;
 
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 1;
-            btn.FlatAppearance.BorderColor = AccentColor; // Garis tepi biru
-            btn.BackColor = CardColorLight;               // Latar belakang putih bersih
-            btn.ForeColor = AccentColor;                  // Teks biru
+
+            btn.BackColor = AccentColor;              // Mengisi seluruh background tombol dengan warna
+            btn.FlatAppearance.BorderColor = AccentColor; // Garis tepi menyesuaikan warna background
+            btn.ForeColor = Color.White;
+
 
             // 1. Amankan tinggi tombol (Jika tingginya di bawah 35, kita paksa jadi 35 agar tidak terpotong)
             if (btn.Height < 35)
@@ -97,6 +97,16 @@ namespace dashboard_bioskop
             rtb.ForeColor = TextDark;
             rtb.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             rtb.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        public static void ApplyRadioButtonStyle(RadioButton rdb)
+        {
+            if (rdb == null) return;
+
+
+            rdb.BackColor = AccentColor;              // Mengisi seluruh background tombol dengan warna
+            rdb.FlatAppearance.BorderColor = AccentColor; // Garis tepi menyesuaikan warna background
+            rdb.ForeColor = Color.White;
         }
     }
 }

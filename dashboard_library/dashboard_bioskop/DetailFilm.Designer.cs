@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlTombol = new System.Windows.Forms.Panel();
+            this.btnUpdateFilm = new System.Windows.Forms.Button();
             this.btnBookTicket = new System.Windows.Forms.Button();
             this.pnlDetail = new System.Windows.Forms.Panel();
+            this.txtKategori = new System.Windows.Forms.TextBox();
+            this.txtJudul = new System.Windows.Forms.TextBox();
             this.lblDeskripsi = new System.Windows.Forms.Label();
             this.lblCast = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -40,7 +43,6 @@
             this.lblIgn = new System.Windows.Forms.Label();
             this.lblRotten = new System.Windows.Forms.Label();
             this.lblImdb = new System.Windows.Forms.Label();
-            this.lblJudul = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pbCast1 = new System.Windows.Forms.PictureBox();
             this.pbCast2 = new System.Windows.Forms.PictureBox();
@@ -48,7 +50,6 @@
             this.pbCast4 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.pbPosterUtama = new System.Windows.Forms.PictureBox();
-            this.btnUpdateFilm = new System.Windows.Forms.Button();
             this.pnlTombol.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -69,6 +70,16 @@
             this.pnlTombol.Size = new System.Drawing.Size(504, 62);
             this.pnlTombol.TabIndex = 2;
             // 
+            // btnUpdateFilm
+            // 
+            this.btnUpdateFilm.Location = new System.Drawing.Point(308, 18);
+            this.btnUpdateFilm.Name = "btnUpdateFilm";
+            this.btnUpdateFilm.Size = new System.Drawing.Size(125, 32);
+            this.btnUpdateFilm.TabIndex = 1;
+            this.btnUpdateFilm.Text = "Update Film";
+            this.btnUpdateFilm.UseVisualStyleBackColor = true;
+            this.btnUpdateFilm.Click += new System.EventHandler(this.btnUpdateFilm_Click);
+            // 
             // btnBookTicket
             // 
             this.btnBookTicket.Location = new System.Drawing.Point(35, 18);
@@ -81,6 +92,8 @@
             // 
             // pnlDetail
             // 
+            this.pnlDetail.Controls.Add(this.txtKategori);
+            this.pnlDetail.Controls.Add(this.txtJudul);
             this.pnlDetail.Controls.Add(this.lblDeskripsi);
             this.pnlDetail.Controls.Add(this.lblCast);
             this.pnlDetail.Controls.Add(this.textBox3);
@@ -90,17 +103,30 @@
             this.pnlDetail.Controls.Add(this.lblIgn);
             this.pnlDetail.Controls.Add(this.lblRotten);
             this.pnlDetail.Controls.Add(this.lblImdb);
-            this.pnlDetail.Controls.Add(this.lblJudul);
             this.pnlDetail.Controls.Add(this.flowLayoutPanel1);
             this.pnlDetail.Location = new System.Drawing.Point(0, 261);
             this.pnlDetail.Name = "pnlDetail";
             this.pnlDetail.Size = new System.Drawing.Size(475, 459);
             this.pnlDetail.TabIndex = 3;
             // 
+            // txtKategori
+            // 
+            this.txtKategori.Location = new System.Drawing.Point(12, 57);
+            this.txtKategori.Name = "txtKategori";
+            this.txtKategori.Size = new System.Drawing.Size(95, 26);
+            this.txtKategori.TabIndex = 12;
+            // 
+            // txtJudul
+            // 
+            this.txtJudul.Location = new System.Drawing.Point(11, 11);
+            this.txtJudul.Name = "txtJudul";
+            this.txtJudul.Size = new System.Drawing.Size(244, 26);
+            this.txtJudul.TabIndex = 11;
+            // 
             // lblDeskripsi
             // 
             this.lblDeskripsi.AutoSize = true;
-            this.lblDeskripsi.Location = new System.Drawing.Point(14, 285);
+            this.lblDeskripsi.Location = new System.Drawing.Point(14, 294);
             this.lblDeskripsi.Name = "lblDeskripsi";
             this.lblDeskripsi.Size = new System.Drawing.Size(93, 20);
             this.lblDeskripsi.TabIndex = 10;
@@ -109,7 +135,7 @@
             // lblCast
             // 
             this.lblCast.AutoSize = true;
-            this.lblCast.Location = new System.Drawing.Point(12, 122);
+            this.lblCast.Location = new System.Drawing.Point(12, 131);
             this.lblCast.Name = "lblCast";
             this.lblCast.Size = new System.Drawing.Size(46, 20);
             this.lblCast.TabIndex = 9;
@@ -117,21 +143,21 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(373, 73);
+            this.textBox3.Location = new System.Drawing.Point(373, 104);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(72, 26);
             this.textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(227, 70);
+            this.textBox2.Location = new System.Drawing.Point(227, 101);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(81, 26);
             this.textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 70);
+            this.textBox1.Location = new System.Drawing.Point(71, 101);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(80, 26);
             this.textBox1.TabIndex = 6;
@@ -139,9 +165,8 @@
             // rtbSinopsis
             // 
             this.rtbSinopsis.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbSinopsis.Location = new System.Drawing.Point(3, 311);
+            this.rtbSinopsis.Location = new System.Drawing.Point(3, 320);
             this.rtbSinopsis.Name = "rtbSinopsis";
-            this.rtbSinopsis.ReadOnly = true;
             this.rtbSinopsis.Size = new System.Drawing.Size(463, 144);
             this.rtbSinopsis.TabIndex = 5;
             this.rtbSinopsis.Text = "";
@@ -149,7 +174,7 @@
             // lblIgn
             // 
             this.lblIgn.AutoSize = true;
-            this.lblIgn.Location = new System.Drawing.Point(325, 73);
+            this.lblIgn.Location = new System.Drawing.Point(325, 104);
             this.lblIgn.Name = "lblIgn";
             this.lblIgn.Size = new System.Drawing.Size(42, 20);
             this.lblIgn.TabIndex = 4;
@@ -158,7 +183,7 @@
             // lblRotten
             // 
             this.lblRotten.AutoSize = true;
-            this.lblRotten.Location = new System.Drawing.Point(159, 73);
+            this.lblRotten.Location = new System.Drawing.Point(159, 104);
             this.lblRotten.Name = "lblRotten";
             this.lblRotten.Size = new System.Drawing.Size(62, 20);
             this.lblRotten.TabIndex = 3;
@@ -167,20 +192,11 @@
             // lblImdb
             // 
             this.lblImdb.AutoSize = true;
-            this.lblImdb.Location = new System.Drawing.Point(13, 73);
+            this.lblImdb.Location = new System.Drawing.Point(13, 104);
             this.lblImdb.Name = "lblImdb";
             this.lblImdb.Size = new System.Drawing.Size(52, 20);
             this.lblImdb.TabIndex = 2;
             this.lblImdb.Text = "IMDb:";
-            // 
-            // lblJudul
-            // 
-            this.lblJudul.AutoSize = true;
-            this.lblJudul.Location = new System.Drawing.Point(13, 21);
-            this.lblJudul.Name = "lblJudul";
-            this.lblJudul.Size = new System.Drawing.Size(72, 20);
-            this.lblJudul.TabIndex = 1;
-            this.lblJudul.Text = "Upin Ipin\r\n";
             // 
             // flowLayoutPanel1
             // 
@@ -188,7 +204,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pbCast2);
             this.flowLayoutPanel1.Controls.Add(this.pbCast3);
             this.flowLayoutPanel1.Controls.Add(this.pbCast4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 158);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 167);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(434, 108);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -244,15 +260,7 @@
             this.pbPosterUtama.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPosterUtama.TabIndex = 1;
             this.pbPosterUtama.TabStop = false;
-            // 
-            // btnUpdateFilm
-            // 
-            this.btnUpdateFilm.Location = new System.Drawing.Point(308, 18);
-            this.btnUpdateFilm.Name = "btnUpdateFilm";
-            this.btnUpdateFilm.Size = new System.Drawing.Size(125, 32);
-            this.btnUpdateFilm.TabIndex = 1;
-            this.btnUpdateFilm.Text = "Update Film";
-            this.btnUpdateFilm.UseVisualStyleBackColor = true;
+            this.pbPosterUtama.Click += new System.EventHandler(this.pbPosterUtama_Click);
             // 
             // DetailFilm
             // 
@@ -267,6 +275,7 @@
             this.Controls.Add(this.pbPosterUtama);
             this.Name = "DetailFilm";
             this.Text = "DetailFilm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DetailFilm_FormClosed);
             this.pnlTombol.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
@@ -295,7 +304,6 @@
         private System.Windows.Forms.Label lblIgn;
         private System.Windows.Forms.Label lblRotten;
         private System.Windows.Forms.Label lblImdb;
-        private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pbCast1;
         private System.Windows.Forms.PictureBox pbCast2;
@@ -303,5 +311,7 @@
         private System.Windows.Forms.PictureBox pbCast4;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnUpdateFilm;
+        private System.Windows.Forms.TextBox txtJudul;
+        private System.Windows.Forms.TextBox txtKategori;
     }
 }

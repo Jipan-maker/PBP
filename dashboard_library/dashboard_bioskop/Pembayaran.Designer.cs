@@ -34,22 +34,13 @@
             this.btnPayNow = new System.Windows.Forms.Button();
             this.pnlFill = new System.Windows.Forms.Panel();
             this.tlPOpsi = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlOpsi1 = new System.Windows.Forms.Panel();
-            this.rdb1 = new System.Windows.Forms.RadioButton();
-            this.pnlOpsi2 = new System.Windows.Forms.Panel();
             this.rdb2 = new System.Windows.Forms.RadioButton();
-            this.pnlOpsi3 = new System.Windows.Forms.Panel();
             this.rdb3 = new System.Windows.Forms.RadioButton();
-            this.pnlOpsi4 = new System.Windows.Forms.Panel();
-            this.rdb4 = new System.Windows.Forms.RadioButton();
+            this.rdb1 = new System.Windows.Forms.RadioButton();
             this.pnlHeader.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.pnlFill.SuspendLayout();
             this.tlPOpsi.SuspendLayout();
-            this.pnlOpsi1.SuspendLayout();
-            this.pnlOpsi2.SuspendLayout();
-            this.pnlOpsi3.SuspendLayout();
-            this.pnlOpsi4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -102,103 +93,50 @@
             // 
             this.tlPOpsi.ColumnCount = 1;
             this.tlPOpsi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlPOpsi.Controls.Add(this.pnlOpsi1, 0, 0);
-            this.tlPOpsi.Controls.Add(this.pnlOpsi2, 0, 1);
-            this.tlPOpsi.Controls.Add(this.pnlOpsi3, 0, 2);
-            this.tlPOpsi.Controls.Add(this.pnlOpsi4, 0, 3);
-            this.tlPOpsi.Location = new System.Drawing.Point(84, 177);
+            this.tlPOpsi.Controls.Add(this.rdb2, 0, 0);
+            this.tlPOpsi.Controls.Add(this.rdb3, 0, 2);
+            this.tlPOpsi.Controls.Add(this.rdb1, 0, 1);
+            this.tlPOpsi.Location = new System.Drawing.Point(136, 174);
             this.tlPOpsi.Name = "tlPOpsi";
-            this.tlPOpsi.RowCount = 4;
-            this.tlPOpsi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlPOpsi.RowCount = 3;
             this.tlPOpsi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlPOpsi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlPOpsi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlPOpsi.Size = new System.Drawing.Size(275, 258);
             this.tlPOpsi.TabIndex = 0;
             // 
-            // pnlOpsi1
-            // 
-            this.pnlOpsi1.Controls.Add(this.rdb1);
-            this.pnlOpsi1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOpsi1.Location = new System.Drawing.Point(10, 10);
-            this.pnlOpsi1.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOpsi1.Name = "pnlOpsi1";
-            this.pnlOpsi1.Size = new System.Drawing.Size(255, 44);
-            this.pnlOpsi1.TabIndex = 0;
-            // 
-            // rdb1
-            // 
-            this.rdb1.AutoSize = true;
-            this.rdb1.Location = new System.Drawing.Point(15, 9);
-            this.rdb1.Name = "rdb1";
-            this.rdb1.Size = new System.Drawing.Size(126, 24);
-            this.rdb1.TabIndex = 0;
-            this.rdb1.TabStop = true;
-            this.rdb1.Text = "radioButton1";
-            this.rdb1.UseVisualStyleBackColor = true;
-            // 
-            // pnlOpsi2
-            // 
-            this.pnlOpsi2.Controls.Add(this.rdb2);
-            this.pnlOpsi2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOpsi2.Location = new System.Drawing.Point(10, 74);
-            this.pnlOpsi2.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOpsi2.Name = "pnlOpsi2";
-            this.pnlOpsi2.Size = new System.Drawing.Size(255, 44);
-            this.pnlOpsi2.TabIndex = 1;
-            // 
             // rdb2
             // 
             this.rdb2.AutoSize = true;
-            this.rdb2.Location = new System.Drawing.Point(17, 11);
+            this.rdb2.Location = new System.Drawing.Point(3, 3);
             this.rdb2.Name = "rdb2";
-            this.rdb2.Size = new System.Drawing.Size(126, 24);
+            this.rdb2.Size = new System.Drawing.Size(134, 24);
             this.rdb2.TabIndex = 0;
             this.rdb2.TabStop = true;
-            this.rdb2.Text = "radioButton2";
+            this.rdb2.Text = "Transfer Bank";
             this.rdb2.UseVisualStyleBackColor = true;
-            // 
-            // pnlOpsi3
-            // 
-            this.pnlOpsi3.Controls.Add(this.rdb3);
-            this.pnlOpsi3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOpsi3.Location = new System.Drawing.Point(10, 138);
-            this.pnlOpsi3.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOpsi3.Name = "pnlOpsi3";
-            this.pnlOpsi3.Size = new System.Drawing.Size(255, 44);
-            this.pnlOpsi3.TabIndex = 2;
             // 
             // rdb3
             // 
             this.rdb3.AutoSize = true;
-            this.rdb3.Location = new System.Drawing.Point(15, 10);
+            this.rdb3.Location = new System.Drawing.Point(3, 175);
             this.rdb3.Name = "rdb3";
-            this.rdb3.Size = new System.Drawing.Size(126, 24);
+            this.rdb3.Size = new System.Drawing.Size(94, 24);
             this.rdb3.TabIndex = 0;
             this.rdb3.TabStop = true;
-            this.rdb3.Text = "radioButton3";
+            this.rdb3.Text = "E-Wallet";
             this.rdb3.UseVisualStyleBackColor = true;
             // 
-            // pnlOpsi4
+            // rdb1
             // 
-            this.pnlOpsi4.Controls.Add(this.rdb4);
-            this.pnlOpsi4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOpsi4.Location = new System.Drawing.Point(10, 202);
-            this.pnlOpsi4.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlOpsi4.Name = "pnlOpsi4";
-            this.pnlOpsi4.Size = new System.Drawing.Size(255, 46);
-            this.pnlOpsi4.TabIndex = 3;
-            // 
-            // rdb4
-            // 
-            this.rdb4.AutoSize = true;
-            this.rdb4.Location = new System.Drawing.Point(18, 10);
-            this.rdb4.Name = "rdb4";
-            this.rdb4.Size = new System.Drawing.Size(126, 24);
-            this.rdb4.TabIndex = 0;
-            this.rdb4.TabStop = true;
-            this.rdb4.Text = "radioButton4";
-            this.rdb4.UseVisualStyleBackColor = true;
+            this.rdb1.AutoSize = true;
+            this.rdb1.Location = new System.Drawing.Point(3, 89);
+            this.rdb1.Name = "rdb1";
+            this.rdb1.Size = new System.Drawing.Size(74, 24);
+            this.rdb1.TabIndex = 0;
+            this.rdb1.TabStop = true;
+            this.rdb1.Text = "QRIS";
+            this.rdb1.UseVisualStyleBackColor = true;
             // 
             // Pembayaran
             // 
@@ -215,14 +153,7 @@
             this.pnlBottom.ResumeLayout(false);
             this.pnlFill.ResumeLayout(false);
             this.tlPOpsi.ResumeLayout(false);
-            this.pnlOpsi1.ResumeLayout(false);
-            this.pnlOpsi1.PerformLayout();
-            this.pnlOpsi2.ResumeLayout(false);
-            this.pnlOpsi2.PerformLayout();
-            this.pnlOpsi3.ResumeLayout(false);
-            this.pnlOpsi3.PerformLayout();
-            this.pnlOpsi4.ResumeLayout(false);
-            this.pnlOpsi4.PerformLayout();
+            this.tlPOpsi.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,13 +166,8 @@
         private System.Windows.Forms.Button btnPayNow;
         private System.Windows.Forms.Panel pnlFill;
         private System.Windows.Forms.TableLayoutPanel tlPOpsi;
-        private System.Windows.Forms.Panel pnlOpsi1;
-        private System.Windows.Forms.RadioButton rdb1;
-        private System.Windows.Forms.Panel pnlOpsi2;
         private System.Windows.Forms.RadioButton rdb2;
-        private System.Windows.Forms.Panel pnlOpsi3;
         private System.Windows.Forms.RadioButton rdb3;
-        private System.Windows.Forms.Panel pnlOpsi4;
-        private System.Windows.Forms.RadioButton rdb4;
+        private System.Windows.Forms.RadioButton rdb1;
     }
 }
